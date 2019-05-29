@@ -16,8 +16,8 @@ namespace reflex_control {
 
 bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
                                                ros::NodeHandle& node_handle) {
-  std::vector<double> cartesian_stiffness_vector;
-  std::vector<double> cartesian_damping_vector;
+  //~ std::vector<double> cartesian_stiffness_vector;
+  //~ std::vector<double> cartesian_damping_vector;
 
   sub_equilibrium_pose_ = node_handle.subscribe(
       "/equilibrium_pose", 20, &CartesianImpedanceController::equilibriumPoseCallback, this,
