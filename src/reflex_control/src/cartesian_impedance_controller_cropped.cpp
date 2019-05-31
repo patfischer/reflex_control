@@ -13,18 +13,6 @@
 #include "pseudo_inversion.h"
 
 namespace reflex_control {
-	
-int testparam = 0;
-bool update_param(
-reflex_control::change_param::Request &req,
-reflex_control::change_param::Response &res) 
-{
-	ROS_INFO("testparam was %ld", testparam);
-	testparam = req.inp;
-	ROS_INFO("testparam was %ld", testparam);
-	res.fb = true;
-	return true;
-}
 
 bool CartesianImpedanceControllerCropped::init(hardware_interface::RobotHW* robot_hw,
                                                ros::NodeHandle& node_handle) {
@@ -115,8 +103,8 @@ bool CartesianImpedanceControllerCropped::init(hardware_interface::RobotHW* robo
   cartesian_damping_.setZero();
   
   //advertise change param service
-  ros::NodeHandle n;
-  ros::ServiceServer service = n.advertiseService("change_param", update_param);
+  testparam = 0;
+  ros::ServiceServer service = node_handle.advertiseService("change_param", &CartesianImpedanceControllerCropped::update_param, this);
 
   return true;
 }
@@ -261,6 +249,17 @@ void CartesianImpedanceControllerCropped::complianceParamCallback(
     //~ orientation_d_target_.coeffs() << -orientation_d_target_.coeffs();
   //~ }
 //~ }
+
+bool CartesianImpedanceControllerCropped::update_param(
+reflex_control::change_param::Request &req,
+reflex_control::change_param::Response &res) 
+{
+  ROS_INFO("testparam was %ld", testparam);
+  testparam = req.inp;
+  ROS_INFO("testparam was %ld", testparam);
+  res.fb = true;
+  return true;
+}
 
 }  // namespace reflex_control
 

@@ -1,8 +1,8 @@
-prefix=/home/fischer/ws_ma/devel
+prefix=/home/patrick/reflex_control/devel
 
 Name: reflex_control
 Description: Description of reflex_control
 Version: 0.7.0
-Cflags: -I/home/fischer/ws_ma/devel/include -I/opt/ros/kinetic/include/libfranka
-Libs: -L/home/fischer/ws_ma/devel/lib -lreflex_control /opt/ros/kinetic/lib/libfranka.so.0.5.0
+Cflags: -I/home/patrick/reflex_control/devel/include -I/opt/ros/kinetic/include/libfranka
+Libs: -L/home/patrick/reflex_control/devel/lib -lreflex_control /opt/ros/kinetic/lib/libfranka.so.0.5.0
 Requires: controller_interface dynamic_reconfigure franka_hw geometry_msgs hardware_interface message_runtime pluginlib realtime_tools roscpp

@@ -69,8 +69,8 @@ class CartesianImpedanceControllerCropped : public controller_interface::MultiIn
   
   // Change Param Service
   int testparam;
-  //~ bool update_param(reflex_control::change_param::Request &req,
-					//~ reflex_control::change_param::Response &res);
+  bool update_param(reflex_control::change_param::Request &req,
+					reflex_control::change_param::Response &res);
 };
 
 }  // namespace reflex_control
