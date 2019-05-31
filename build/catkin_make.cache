@@ -1,2 +1,0 @@
-reflex_control
--DCATKIN_DEVEL_PREFIX=/home/fischer/ws_ma/devel -DCMAKE_INSTALL_PREFIX=/home/fischer/ws_ma/install -G Unix Makefiles
