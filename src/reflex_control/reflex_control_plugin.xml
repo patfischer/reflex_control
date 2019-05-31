@@ -1,37 +1,7 @@
 <library path="lib/libreflex_control">
-  <class name="reflex_control/JointVelocityExampleController" type="reflex_control::JointVelocityExampleController" base_class_type="controller_interface::ControllerBase">
-    <description>
-      A controller that executes a short motion based on joint velocities to demonstrate correct usage
-    </description>
-  </class>
-  <class name="reflex_control/JointPositionExampleController" type="reflex_control::JointPositionExampleController" base_class_type="controller_interface::ControllerBase">
-    <description>
-      A controller that executes a short motion based on joint positions to demonstrate correct usage
-    </description>
-  </class>
-  <class name="reflex_control/CartesianPoseExampleController" type="reflex_control::CartesianPoseExampleController" base_class_type="controller_interface::ControllerBase">
-    <description>
-      A controller that executes a short motion based on cartesian poses to demonstrate correct usage
-    </description>
-  </class>
-  <class name="reflex_control/CartesianVelocityExampleController" type="reflex_control::CartesianVelocityExampleController" base_class_type="controller_interface::ControllerBase">
-    <description>
-      A controller that executes a short motion based on cartesian velocities to demonstrate correct usage
-    </description>
-  </class>
-  <class name="reflex_control/ElbowExampleController" type="reflex_control::ElbowExampleController" base_class_type="controller_interface::ControllerBase">
-    <description>
-      A controller that executes a short motion based on cartesian poses and elbow to demonstrate correct usage
-    </description>
-  </class>
   <class name="reflex_control/ModelExampleController" type="reflex_control::ModelExampleController" base_class_type="controller_interface::ControllerBase">
     <description>
       A controller that evaluates and prints the dynamic model of Franka
-    </description>
-  </class>
-  <class name="reflex_control/JointImpedanceExampleController" type="reflex_control::JointImpedanceExampleController" base_class_type="controller_interface::ControllerBase">
-    <description>
-      A controller that tracks a cartesian path with a joint impedance controller that compensates coriolis torques. The torque commands are compared to measured torques in Console outputs.
     </description>
   </class>
   <class name="reflex_control/CartesianImpedanceController" type="reflex_control::CartesianImpedanceController" base_class_type="controller_interface::ControllerBase">
@@ -39,9 +9,9 @@
       A controller that renders a spring damper system in cartesian space. Compliance parameters and the equilibrium pose can be modified online with dynamic reconfigure and an interactive marker respectively. 
     </description>
   </class>
-  <class name="reflex_control/ForceExampleController" type="reflex_control::ForceExampleController" base_class_type="controller_interface::ControllerBase">
+  <class name="reflex_control/CartesianImpedanceControllerCropped" type="reflex_control::CartesianImpedanceControllerCropped" base_class_type="controller_interface::ControllerBase">
     <description>
-      A PI controller that applies a force corresponding to a user-provided desired mass in the z axis. The desired mass value can be modified online with dynamic reconfigure. 
+       A controller that renders a spring damper system in cartesian space. Compliance parameters can be modified online with dynamic reconfigure.
     </description>
   </class>
 

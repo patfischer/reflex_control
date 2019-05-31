@@ -26,6 +26,10 @@ add_message_files(FILES
   JointTorqueComparison.msg
 )
 
+add_service_files(FILES
+  change_param.srv
+)
+
 generate_messages()
 
 generate_dynamic_reconfigure_options(
@@ -50,6 +54,7 @@ catkin_package(
 
 add_library(reflex_control
   src/cartesian_impedance_controller.cpp
+  src/cartesian_impedance_controller_cropped.cpp
 )
 
 add_dependencies(reflex_control

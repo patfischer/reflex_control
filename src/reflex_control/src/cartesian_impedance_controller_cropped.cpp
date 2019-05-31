@@ -1,6 +1,6 @@
 // Copyright (c) 2017 Franka Emika GmbH
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
-#include <reflex_control/cartesian_impedance_controller.h>
+#include <reflex_control/cartesian_impedance_controller_cropped.h>
 
 #include <cmath>
 #include <memory>
@@ -13,25 +13,37 @@
 #include "pseudo_inversion.h"
 
 namespace reflex_control {
+	
+int testparam = 0;
+bool update_param(
+reflex_control::change_param::Request &req,
+reflex_control::change_param::Response &res) 
+{
+	ROS_INFO("testparam was %ld", testparam);
+	testparam = req.inp;
+	ROS_INFO("testparam was %ld", testparam);
+	res.fb = true;
+	return true;
+}
 
-bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
+bool CartesianImpedanceControllerCropped::init(hardware_interface::RobotHW* robot_hw,
                                                ros::NodeHandle& node_handle) {
   //~ std::vector<double> cartesian_stiffness_vector;
   //~ std::vector<double> cartesian_damping_vector;
 
   //~ sub_equilibrium_pose_ = node_handle.subscribe(
-      //~ "/equilibrium_pose", 20, &CartesianImpedanceController::equilibriumPoseCallback, this,
+      //~ "/equilibrium_pose", 20, &CartesianImpedanceControllerCropped::equilibriumPoseCallback, this,
       //~ ros::TransportHints().reliable().tcpNoDelay());
 
   std::string arm_id;
   if (!node_handle.getParam("arm_id", arm_id)) {
-    ROS_ERROR_STREAM("CartesianImpedanceController: Could not read parameter arm_id");
+    ROS_ERROR_STREAM("CartesianImpedanceControllerCropped: Could not read parameter arm_id");
     return false;
   }
   std::vector<std::string> joint_names;
   if (!node_handle.getParam("joint_names", joint_names) || joint_names.size() != 7) {
     ROS_ERROR(
-        "CartesianImpedanceController: Invalid or no joint_names parameters provided, "
+        "CartesianImpedanceControllerCropped: Invalid or no joint_names parameters provided, "
         "aborting controller init!");
     return false;
   }
@@ -39,7 +51,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   auto* model_interface = robot_hw->get<franka_hw::FrankaModelInterface>();
   if (model_interface == nullptr) {
     ROS_ERROR_STREAM(
-        "CartesianImpedanceController: Error getting model interface from hardware");
+        "CartesianImpedanceControllerCropped: Error getting model interface from hardware");
     return false;
   }
   try {
@@ -47,7 +59,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
         model_interface->getHandle(arm_id + "_model"));
   } catch (hardware_interface::HardwareInterfaceException& ex) {
     ROS_ERROR_STREAM(
-        "CartesianImpedanceController: Exception getting model handle from interface: "
+        "CartesianImpedanceControllerCropped: Exception getting model handle from interface: "
         << ex.what());
     return false;
   }
@@ -55,7 +67,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   auto* state_interface = robot_hw->get<franka_hw::FrankaStateInterface>();
   if (state_interface == nullptr) {
     ROS_ERROR_STREAM(
-        "CartesianImpedanceController: Error getting state interface from hardware");
+        "CartesianImpedanceControllerCropped: Error getting state interface from hardware");
     return false;
   }
   try {
@@ -63,7 +75,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
         state_interface->getHandle(arm_id + "_robot"));
   } catch (hardware_interface::HardwareInterfaceException& ex) {
     ROS_ERROR_STREAM(
-        "CartesianImpedanceController: Exception getting state handle from interface: "
+        "CartesianImpedanceControllerCropped: Exception getting state handle from interface: "
         << ex.what());
     return false;
   }
@@ -71,7 +83,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   auto* effort_joint_interface = robot_hw->get<hardware_interface::EffortJointInterface>();
   if (effort_joint_interface == nullptr) {
     ROS_ERROR_STREAM(
-        "CartesianImpedanceController: Error getting effort joint interface from hardware");
+        "CartesianImpedanceControllerCropped: Error getting effort joint interface from hardware");
     return false;
   }
   for (size_t i = 0; i < 7; ++i) {
@@ -79,7 +91,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
       joint_handles_.push_back(effort_joint_interface->getHandle(joint_names[i]));
     } catch (const hardware_interface::HardwareInterfaceException& ex) {
       ROS_ERROR_STREAM(
-          "CartesianImpedanceController: Exception getting joint handles: " << ex.what());
+          "CartesianImpedanceControllerCropped: Exception getting joint handles: " << ex.what());
       return false;
     }
   }
@@ -92,7 +104,7 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
 
       dynamic_reconfigure_compliance_param_node_);
   dynamic_server_compliance_param_->setCallback(
-      boost::bind(&CartesianImpedanceController::complianceParamCallback, this, _1, _2));
+      boost::bind(&CartesianImpedanceControllerCropped::complianceParamCallback, this, _1, _2));
 
   position_d_.setZero();
   orientation_d_.coeffs() << 0.0, 0.0, 0.0, 1.0;
@@ -101,11 +113,15 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
 
   cartesian_stiffness_.setZero();
   cartesian_damping_.setZero();
+  
+  //advertise change param service
+  ros::NodeHandle n;
+  ros::ServiceServer service = n.advertiseService("change_param", update_param);
 
   return true;
 }
 
-void CartesianImpedanceController::starting(const ros::Time& /*time*/) {
+void CartesianImpedanceControllerCropped::starting(const ros::Time& /*time*/) {
   // compute initial velocity with jacobian and set x_attractor and q_d_nullspace
   // to initial configuration
   franka::RobotState initial_state = state_handle_->getRobotState();
@@ -128,7 +144,7 @@ void CartesianImpedanceController::starting(const ros::Time& /*time*/) {
   q_d_nullspace_ = q_initial;
 }
 
-void CartesianImpedanceController::update(const ros::Time& /*time*/,
+void CartesianImpedanceControllerCropped::update(const ros::Time& /*time*/,
                                                  const ros::Duration& /*period*/) {
   // get state variables
   franka::RobotState robot_state = state_handle_->getRobotState();
@@ -206,7 +222,7 @@ void CartesianImpedanceController::update(const ros::Time& /*time*/,
   orientation_d_ = Eigen::Quaterniond(aa_orientation_d);
 }
 
-Eigen::Matrix<double, 7, 1> CartesianImpedanceController::saturateTorqueRate(
+Eigen::Matrix<double, 7, 1> CartesianImpedanceControllerCropped::saturateTorqueRate(
     const Eigen::Matrix<double, 7, 1>& tau_d_calculated,
     const Eigen::Matrix<double, 7, 1>& tau_J_d) {  // NOLINT (readability-identifier-naming)
   Eigen::Matrix<double, 7, 1> tau_d_saturated{};
@@ -218,7 +234,7 @@ Eigen::Matrix<double, 7, 1> CartesianImpedanceController::saturateTorqueRate(
   return tau_d_saturated;
 }
 
-void CartesianImpedanceController::complianceParamCallback(
+void CartesianImpedanceControllerCropped::complianceParamCallback(
     reflex_control::compliance_paramConfig& config,
     uint32_t /*level*/) {
   cartesian_stiffness_target_.setIdentity();
@@ -235,7 +251,7 @@ void CartesianImpedanceController::complianceParamCallback(
   nullspace_stiffness_target_ = config.nullspace_stiffness;
 }
 
-//~ void CartesianImpedanceController::equilibriumPoseCallback(
+//~ void CartesianImpedanceControllerCropped::equilibriumPoseCallback(
     //~ const geometry_msgs::PoseStampedConstPtr& msg) {
   //~ position_d_target_ << msg->pose.position.x, msg->pose.position.y, msg->pose.position.z;
   //~ Eigen::Quaterniond last_orientation_d_target(orientation_d_target_);
@@ -248,5 +264,5 @@ void CartesianImpedanceController::complianceParamCallback(
 
 }  // namespace reflex_control
 
-PLUGINLIB_EXPORT_CLASS(reflex_control::CartesianImpedanceController,
+PLUGINLIB_EXPORT_CLASS(reflex_control::CartesianImpedanceControllerCropped,
                        controller_interface::ControllerBase)
