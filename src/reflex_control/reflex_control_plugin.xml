@@ -14,5 +14,24 @@
        A controller that renders a spring damper system in cartesian space. Compliance parameters can be modified online with dynamic reconfigure.
     </description>
   </class>
-
+  <class name="reflex_control/JointImpedanceController" type="reflex_control::JointImpedanceController" base_class_type="controller_interface::ControllerBase">
+    <description>
+       A controller that renders a spring damper system in cartesian space. Compliance parameters can be modified online with dynamic reconfigure.
+    </description>
+  </class>
+  <class name="reflex_control/CartesianPoseController" type="reflex_control::CartesianPoseController" base_class_type="controller_interface::ControllerBase">
+    <description>
+       A controller that renders a spring damper system in cartesian space. Compliance parameters can be modified online with dynamic reconfigure.
+    </description>
+  </class>
+  <class name="reflex_control/CartesianVelocityController" type="reflex_control::CartesianVelocityController" base_class_type="controller_interface::ControllerBase">
+    <description>
+       A controller that renders a spring damper system in cartesian space. Compliance parameters can be modified online with dynamic reconfigure.
+    </description>
+  </class>
+  <class name="reflex_control/JointPositionController" type="reflex_control::JointPositionController" base_class_type="controller_interface::ControllerBase">
+    <description>
+       A controller that renders a spring damper system in cartesian space. Compliance parameters can be modified online with dynamic reconfigure.
+    </description>
+  </class>
 </library>

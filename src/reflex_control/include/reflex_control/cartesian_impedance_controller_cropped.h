@@ -68,6 +68,8 @@ class CartesianImpedanceControllerCropped : public controller_interface::MultiIn
   void equilibriumPoseCallback(const geometry_msgs::PoseStampedConstPtr& msg);
   
   // Change Param Service
+  ros::ServiceServer service;
+  ros::NodeHandle controller_services_node;
   int testparam;
   bool update_param(reflex_control::change_param::Request &req,
 					reflex_control::change_param::Response &res);

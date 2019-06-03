@@ -61,9 +61,9 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   void complianceParamCallback(reflex_control::compliance_paramConfig& config,
                                uint32_t level);
 
-  // Equilibrium pose subscriber
-  ros::Subscriber sub_equilibrium_pose_;
-  void equilibriumPoseCallback(const geometry_msgs::PoseStampedConstPtr& msg);
+  //~ // Equilibrium pose subscriber
+  //~ ros::Subscriber sub_equilibrium_pose_;
+  //~ void equilibriumPoseCallback(const geometry_msgs::PoseStampedConstPtr& msg);
 };
 
 }  // namespace reflex_control

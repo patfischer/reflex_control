@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/patrick/reflex_control/build/CMakeFiles/CMakeTmp
+Change Dir: /home/fischer/reflex_control/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_00ec0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_00ec0.dir/build.make CMakeFiles/cmTC_00ec0.dir/build
-make[1]: Verzeichnis „/home/patrick/reflex_control/build/CMakeFiles/CMakeTmp“ wird betreten
-Building C object CMakeFiles/cmTC_00ec0.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_00ec0.dir/CheckSymbolExists.c.o   -c /home/patrick/reflex_control/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_00ec0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00ec0.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_00ec0.dir/CheckSymbolExists.c.o  -o cmTC_00ec0 -rdynamic 
-CMakeFiles/cmTC_00ec0.dir/CheckSymbolExists.c.o: In Funktion `main':
-CheckSymbolExists.c:(.text+0xa): Nicht definierter Verweis auf `pthread_create'
+Run Build Command:"/usr/bin/make" "cmTC_7c7fc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7c7fc.dir/build.make CMakeFiles/cmTC_7c7fc.dir/build
+make[1]: Entering directory '/home/fischer/reflex_control/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c7fc.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_7c7fc.dir/CheckSymbolExists.c.o   -c /home/fischer/reflex_control/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7c7fc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c7fc.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_7c7fc.dir/CheckSymbolExists.c.o  -o cmTC_7c7fc -rdynamic 
+CMakeFiles/cmTC_7c7fc.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_00ec0.dir/build.make:97: die Regel für Ziel „cmTC_00ec0“ scheiterte
-make[1]: *** [cmTC_00ec0] Fehler 1
-make[1]: Verzeichnis „/home/patrick/reflex_control/build/CMakeFiles/CMakeTmp“ wird verlassen
-Makefile:126: die Regel für Ziel „cmTC_00ec0/fast“ scheiterte
-make: *** [cmTC_00ec0/fast] Fehler 2
+CMakeFiles/cmTC_7c7fc.dir/build.make:97: recipe for target 'cmTC_7c7fc' failed
+make[1]: *** [cmTC_7c7fc] Error 1
+make[1]: Leaving directory '/home/fischer/reflex_control/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7c7fc/fast' failed
+make: *** [cmTC_7c7fc/fast] Error 2
 
-File /home/patrick/reflex_control/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/fischer/reflex_control/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/patrick/reflex_control/build/CMakeFiles/CMakeTmp
+Change Dir: /home/fischer/reflex_control/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4db1b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4db1b.dir/build.make CMakeFiles/cmTC_4db1b.dir/build
-make[1]: Verzeichnis „/home/patrick/reflex_control/build/CMakeFiles/CMakeTmp“ wird betreten
-Building C object CMakeFiles/cmTC_4db1b.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4db1b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_4db1b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4db1b.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_4db1b.dir/CheckFunctionExists.c.o  -o cmTC_4db1b -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_fc256/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fc256.dir/build.make CMakeFiles/cmTC_fc256.dir/build
+make[1]: Entering directory '/home/fischer/reflex_control/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fc256.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_fc256.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fc256
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fc256.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_fc256.dir/CheckFunctionExists.c.o  -o cmTC_fc256 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_4db1b.dir/build.make:97: die Regel für Ziel „cmTC_4db1b“ scheiterte
-make[1]: *** [cmTC_4db1b] Fehler 1
-make[1]: Verzeichnis „/home/patrick/reflex_control/build/CMakeFiles/CMakeTmp“ wird verlassen
-Makefile:126: die Regel für Ziel „cmTC_4db1b/fast“ scheiterte
-make: *** [cmTC_4db1b/fast] Fehler 2
+CMakeFiles/cmTC_fc256.dir/build.make:97: recipe for target 'cmTC_fc256' failed
+make[1]: *** [cmTC_fc256] Error 1
+make[1]: Leaving directory '/home/fischer/reflex_control/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fc256/fast' failed
+make: *** [cmTC_fc256/fast] Error 2
 
 

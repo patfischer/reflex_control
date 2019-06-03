@@ -55,6 +55,10 @@ catkin_package(
 add_library(reflex_control
   src/cartesian_impedance_controller.cpp
   src/cartesian_impedance_controller_cropped.cpp
+  src/cartesian_pose_controller.cpp
+  src/cartesian_velocity_controller.cpp
+  src/joint_impedance_controller.cpp
+  src/joint_position_controller.cpp
 )
 
 add_dependencies(reflex_control

@@ -103,8 +103,8 @@ bool CartesianImpedanceControllerCropped::init(hardware_interface::RobotHW* robo
   cartesian_damping_.setZero();
   
   //advertise change param service
-  testparam = 0;
-  ros::ServiceServer service = node_handle.advertiseService("change_param", &CartesianImpedanceControllerCropped::update_param, this);
+  controller_services_node = ros::NodeHandle("controller_services_node");
+  service = controller_services_node.advertiseService("change_param", &CartesianImpedanceControllerCropped::update_param, this);
 
   return true;
 }
@@ -130,6 +130,7 @@ void CartesianImpedanceControllerCropped::starting(const ros::Time& /*time*/) {
 
   // set nullspace equilibrium configuration to initial q
   q_d_nullspace_ = q_initial;
+  
 }
 
 void CartesianImpedanceControllerCropped::update(const ros::Time& /*time*/,
