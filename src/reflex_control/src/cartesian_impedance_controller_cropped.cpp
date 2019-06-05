@@ -23,9 +23,8 @@ bool CartesianImpedanceControllerCropped::init(hardware_interface::RobotHW* robo
   //     "/equilibrium_pose", 20, &CartesianImpedanceControllerCropped::equilibriumPoseCallback, this,
   //     ros::TransportHints().reliable().tcpNoDelay());
 
-  controller_switch = node_handle.subscribe(
-      "/controllerSwitch", 20, &CartesianImpedanceControllerCropped::controllerSwitchCallback, this,
-      ros::TransportHints().reliable().tcpNoDelay());
+  controller_switch = node_handle.advertiseService(
+      "controllerSwitch", &CartesianImpedanceControllerCropped::update_param, this);
 
   std::string arm_id;
   if (!node_handle.getParam("arm_id", arm_id)) {

@@ -21,6 +21,27 @@ cartesian_impedance_controller_cropped:
         - panda_joint5
         - panda_joint6
         - panda_joint7
+    k_gains:
+        - 600.0
+        - 600.0
+        - 600.0
+        - 600.0
+        - 250.0
+        - 150.0
+        - 50.0
+    d_gains:
+        - 50.0
+        - 50.0
+        - 50.0
+        - 20.0
+        - 20.0
+        - 20.0
+        - 10.0
+    radius: 0.1
+    acceleration_time: 2.0
+    vel_max: 0.15
+    publish_rate: 10.0
+    coriolis_factor: 1.0
 
 joint_position_controller:
     type: reflex_control/JointPositionController

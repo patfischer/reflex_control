@@ -147,8 +147,8 @@ void JointImpedanceController::update(const ros::Time& /*time*/,
   double delta_z = radius_ * std::sin(angle_);
 
   std::array<double, 16> pose_desired = initial_pose_;
-  //~ pose_desired[13] += delta_y;
-  //~ pose_desired[14] += delta_z;
+  pose_desired[13] += delta_y;
+  pose_desired[14] += delta_z;
   cartesian_pose_handle_->setCommand(pose_desired);
 
   franka::RobotState robot_state = cartesian_pose_handle_->getRobotState();

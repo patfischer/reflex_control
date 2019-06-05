@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIC   -std=gnu++14
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"reflex_control\" -Dreflex_control_EXPORTS
 
-CXX_INCLUDES = -I/home/patrick/reflex_control/devel/include -isystem /opt/ros/kinetic/include/libfranka -isystem /usr/include/eigen3 -isystem /opt/ros/kinetic/include -isystem /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/patrick/reflex_control/src/reflex_control/include 
+CXX_INCLUDES = -I/home/fischer/reflex_control/devel/include -isystem /opt/ros/kinetic/include/libfranka -isystem /usr/include/eigen3 -isystem /opt/ros/kinetic/include -isystem /opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/fischer/reflex_control/src/reflex_control/include 
 

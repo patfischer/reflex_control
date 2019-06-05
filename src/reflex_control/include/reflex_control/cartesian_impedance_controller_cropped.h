@@ -93,7 +93,7 @@ class CartesianImpedanceControllerCropped : public controller_interface::MultiIn
   // Equilibrium pose subscriber
   ros::Subscriber sub_equilibrium_pose_;
   void equilibriumPoseCallback(const geometry_msgs::PoseStampedConstPtr& msg);
-  ros::Subscriber controller_switch;
+  ros::ServiceServer controller_switch;
   void controllerSwitchCallback(const std_msgs::Int32& msg);
 
   void impedanceupdate(const ros::Time&, const ros::Duration& period);
