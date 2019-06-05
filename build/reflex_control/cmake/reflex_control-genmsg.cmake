@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "reflex_control: 1 messages, 1 services")
+message(STATUS "reflex_control: 2 messages, 1 services")
 
-set(MSG_I_FLAGS "-Ireflex_control:/home/fischer/reflex_control/src/reflex_control/msg")
+set(MSG_I_FLAGS "-Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,19 @@ add_custom_target(reflex_control_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" ""
 )
 
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" ""
+)
+
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" ""
 )
 
 #
@@ -34,7 +39,13 @@ add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_cpp(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
@@ -42,7 +53,7 @@ _generate_msg_cpp(reflex_control
 
 ### Generating Services
 _generate_srv_cpp(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
@@ -60,9 +71,11 @@ add_custom_target(reflex_control_generate_messages_cpp
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,7 +88,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_cp
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
+)
+_generate_msg_eus(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
@@ -83,7 +102,7 @@ _generate_msg_eus(reflex_control
 
 ### Generating Services
 _generate_srv_eus(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
@@ -101,9 +120,11 @@ add_custom_target(reflex_control_generate_messages_eus
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,7 +137,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_eu
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_lisp(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
@@ -124,7 +151,7 @@ _generate_msg_lisp(reflex_control
 
 ### Generating Services
 _generate_srv_lisp(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
@@ -142,9 +169,11 @@ add_custom_target(reflex_control_generate_messages_lisp
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -157,7 +186,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_li
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
+)
+_generate_msg_nodejs(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
@@ -165,7 +200,7 @@ _generate_msg_nodejs(reflex_control
 
 ### Generating Services
 _generate_srv_nodejs(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
@@ -183,9 +218,11 @@ add_custom_target(reflex_control_generate_messages_nodejs
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -198,7 +235,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_no
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
+)
+_generate_msg_py(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
@@ -206,7 +249,7 @@ _generate_msg_py(reflex_control
 
 ### Generating Services
 _generate_srv_py(reflex_control
-  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
@@ -224,9 +267,11 @@ add_custom_target(reflex_control_generate_messages_py
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

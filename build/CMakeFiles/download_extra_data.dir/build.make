@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fischer/reflex_control/src
+CMAKE_SOURCE_DIR = /home/patrick/reflex_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fischer/reflex_control/build
+CMAKE_BINARY_DIR = /home/patrick/reflex_control/build
 
 # Utility rule file for download_extra_data.
 
@@ -67,6 +67,6 @@ CMakeFiles/download_extra_data.dir/clean:
 .PHONY : CMakeFiles/download_extra_data.dir/clean
 
 CMakeFiles/download_extra_data.dir/depend:
-	cd /home/fischer/reflex_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fischer/reflex_control/src /home/fischer/reflex_control/src /home/fischer/reflex_control/build /home/fischer/reflex_control/build /home/fischer/reflex_control/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/patrick/reflex_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/patrick/reflex_control/src /home/patrick/reflex_control/src /home/patrick/reflex_control/build /home/patrick/reflex_control/build /home/patrick/reflex_control/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/download_extra_data.dir/depend
 

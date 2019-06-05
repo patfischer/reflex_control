@@ -43,33 +43,40 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fischer/reflex_control/src
+CMAKE_SOURCE_DIR = /home/patrick/reflex_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fischer/reflex_control/build
+CMAKE_BINARY_DIR = /home/patrick/reflex_control/build
 
 # Utility rule file for reflex_control_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/progress.make
 
-reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs: /home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js
-reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs: /home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js
+reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs: /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/ControllerSwitch.js
+reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs: /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js
+reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs: /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js
 
 
-/home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js: /home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from reflex_control/JointTorqueComparison.msg"
-	cd /home/fischer/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg -Ireflex_control:/home/fischer/reflex_control/src/reflex_control/msg -p reflex_control -o /home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/msg
+/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/ControllerSwitch.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/ControllerSwitch.js: /home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from reflex_control/ControllerSwitch.msg"
+	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -p reflex_control -o /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg
 
-/home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js: /home/fischer/reflex_control/src/reflex_control/srv/change_param.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from reflex_control/change_param.srv"
-	cd /home/fischer/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/fischer/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/fischer/reflex_control/src/reflex_control/msg -p reflex_control -o /home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/srv
+/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js: /home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from reflex_control/JointTorqueComparison.msg"
+	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -p reflex_control -o /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg
+
+/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js: /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from reflex_control/change_param.srv"
+	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -p reflex_control -o /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv
 
 reflex_control_generate_messages_nodejs: reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs
-reflex_control_generate_messages_nodejs: /home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js
-reflex_control_generate_messages_nodejs: /home/fischer/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js
+reflex_control_generate_messages_nodejs: /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/ControllerSwitch.js
+reflex_control_generate_messages_nodejs: /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/JointTorqueComparison.js
+reflex_control_generate_messages_nodejs: /home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js
 reflex_control_generate_messages_nodejs: reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/build.make
 
 .PHONY : reflex_control_generate_messages_nodejs
@@ -80,10 +87,10 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/build: ref
 .PHONY : reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/build
 
 reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/clean:
-	cd /home/fischer/reflex_control/build/reflex_control && $(CMAKE_COMMAND) -P CMakeFiles/reflex_control_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/patrick/reflex_control/build/reflex_control && $(CMAKE_COMMAND) -P CMakeFiles/reflex_control_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/clean
 
 reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/depend:
-	cd /home/fischer/reflex_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fischer/reflex_control/src /home/fischer/reflex_control/src/reflex_control /home/fischer/reflex_control/build /home/fischer/reflex_control/build/reflex_control /home/fischer/reflex_control/build/reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/patrick/reflex_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/patrick/reflex_control/src /home/patrick/reflex_control/src/reflex_control /home/patrick/reflex_control/build /home/patrick/reflex_control/build/reflex_control /home/patrick/reflex_control/build/reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : reflex_control/CMakeFiles/reflex_control_generate_messages_nodejs.dir/depend
 
