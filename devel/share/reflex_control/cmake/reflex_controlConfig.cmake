@@ -67,14 +67,14 @@ set(reflex_control_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(reflex_control_SOURCE_PREFIX /home/fischer/reflex_control/src/reflex_control)
-  set(reflex_control_DEVEL_PREFIX /home/fischer/reflex_control/devel)
+  set(reflex_control_SOURCE_PREFIX /home/patrick/reflex_control/src/reflex_control)
+  set(reflex_control_DEVEL_PREFIX /home/patrick/reflex_control/devel)
   set(reflex_control_INSTALL_PREFIX "")
   set(reflex_control_PREFIX ${reflex_control_DEVEL_PREFIX})
 else()
   set(reflex_control_SOURCE_PREFIX "")
   set(reflex_control_DEVEL_PREFIX "")
-  set(reflex_control_INSTALL_PREFIX /home/fischer/reflex_control/install)
+  set(reflex_control_INSTALL_PREFIX /home/patrick/reflex_control/install)
   set(reflex_control_PREFIX ${reflex_control_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(reflex_control_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/fischer/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka " STREQUAL " ")
+if(NOT "/home/patrick/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka " STREQUAL " ")
   set(reflex_control_INCLUDE_DIRS "")
-  set(_include_dirs "/home/fischer/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka")
+  set(_include_dirs "/home/patrick/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka")
   if(NOT "https://github.com/frankaemika/franka_ros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/frankaemika/franka_ros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/reflex_control " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/fischer/reflex_control/devel/include;/opt/ros/kinetic/include/libf
         message(FATAL_ERROR "Project 'reflex_control' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'reflex_control' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/fischer/reflex_control/src/reflex_control/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'reflex_control' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/patrick/reflex_control/src/reflex_control/${idir}'.  ${_report}")
     endif()
     _list_append_unique(reflex_control_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/fischer/reflex_control/devel/lib;/home/fischer/reflex_control/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/patrick/reflex_control/devel/lib;/home/patrick/reflex_control/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -160,7 +160,7 @@ foreach(t ${reflex_control_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "controller_interface;dynamic_reconfigure;franka_hw;geometry_msgs;hardware_interface;message_runtime;pluginlib;realtime_tools;roscpp")
+set(depends "controller_interface;dynamic_reconfigure;franka_hw;std_msgs;actionlib;actionlib_msgs;geometry_msgs;hardware_interface;message_runtime;pluginlib;realtime_tools;roscpp")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

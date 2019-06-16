@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fischer/reflex_control/src
+CMAKE_SOURCE_DIR = /home/patrick/reflex_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fischer/reflex_control/build
+CMAKE_BINARY_DIR = /home/patrick/reflex_control/build
 
 # Include any dependencies generated for this target.
 include reflex_control/CMakeFiles/reflex_control.dir/depend.make
@@ -58,17 +58,17 @@ include reflex_control/CMakeFiles/reflex_control.dir/progress.make
 include reflex_control/CMakeFiles/reflex_control.dir/flags.make
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o: reflex_control/CMakeFiles/reflex_control.dir/flags.make
-reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o: /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o -c /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp
+reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o: /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o"
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o -c /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.i"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp > CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.i
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp > CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.i
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.s"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.s
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.s
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o.requires:
 
@@ -82,17 +82,17 @@ reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.
 
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o: reflex_control/CMakeFiles/reflex_control.dir/flags.make
-reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o: /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o -c /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp
+reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o: /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o"
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o -c /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.i"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp > CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.i
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp > CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.i
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.s"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fischer/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.s
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller_cropped.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.s
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o.requires:
 
@@ -106,17 +106,17 @@ reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_
 
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o: reflex_control/CMakeFiles/reflex_control.dir/flags.make
-reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o: /home/fischer/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o -c /home/fischer/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp
+reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o: /home/patrick/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o"
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o -c /home/patrick/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.i"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fischer/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp > CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.i
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/patrick/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp > CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.i
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.s"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fischer/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.s
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/patrick/reflex_control/src/reflex_control/src/cartesian_pose_controller.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.s
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o.requires:
 
@@ -130,17 +130,17 @@ reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o
 
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o: reflex_control/CMakeFiles/reflex_control.dir/flags.make
-reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o: /home/fischer/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o -c /home/fischer/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp
+reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o: /home/patrick/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o"
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o -c /home/patrick/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.i"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fischer/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp > CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.i
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/patrick/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp > CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.i
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.s"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fischer/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.s
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/patrick/reflex_control/src/reflex_control/src/cartesian_velocity_controller.cpp -o CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.s
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o.requires:
 
@@ -154,17 +154,17 @@ reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.c
 
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o: reflex_control/CMakeFiles/reflex_control.dir/flags.make
-reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o: /home/fischer/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o -c /home/fischer/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp
+reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o: /home/patrick/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o"
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o -c /home/patrick/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.i"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fischer/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp > CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.i
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/patrick/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp > CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.i
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.s"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fischer/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp -o CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.s
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/patrick/reflex_control/src/reflex_control/src/joint_impedance_controller.cpp -o CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.s
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o.requires:
 
@@ -178,17 +178,17 @@ reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.
 
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o: reflex_control/CMakeFiles/reflex_control.dir/flags.make
-reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o: /home/fischer/reflex_control/src/reflex_control/src/joint_position_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o -c /home/fischer/reflex_control/src/reflex_control/src/joint_position_controller.cpp
+reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o: /home/patrick/reflex_control/src/reflex_control/src/joint_position_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o"
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o -c /home/patrick/reflex_control/src/reflex_control/src/joint_position_controller.cpp
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.i"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fischer/reflex_control/src/reflex_control/src/joint_position_controller.cpp > CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.i
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/patrick/reflex_control/src/reflex_control/src/joint_position_controller.cpp > CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.i
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.s"
-	cd /home/fischer/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fischer/reflex_control/src/reflex_control/src/joint_position_controller.cpp -o CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.s
+	cd /home/patrick/reflex_control/build/reflex_control && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/patrick/reflex_control/src/reflex_control/src/joint_position_controller.cpp -o CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.s
 
 reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o.requires:
 
@@ -213,58 +213,59 @@ reflex_control_OBJECTS = \
 # External object files for target reflex_control
 reflex_control_EXTERNAL_OBJECTS =
 
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/build.make
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libfranka.so.0.5.0
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libfranka_hw.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libfranka.so.0.5.0
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/liburdf.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libclass_loader.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/libPocoFoundation.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libroslib.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librospack.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librealtime_tools.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libroscpp.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librostime.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libcpp_common.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/fischer/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fischer/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library /home/fischer/reflex_control/devel/lib/libreflex_control.so"
-	cd /home/fischer/reflex_control/build/reflex_control && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/reflex_control.dir/link.txt --verbose=$(VERBOSE)
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller_cropped.cpp.o
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_pose_controller.cpp.o
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_velocity_controller.cpp.o
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/joint_impedance_controller.cpp.o
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/src/joint_position_controller.cpp.o
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/build.make
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libfranka.so.0.5.0
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libfranka_hw.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libfranka.so.0.5.0
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/liburdf.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/liburdfdom_sensor.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/liburdfdom_model_state.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/liburdfdom_model.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/liburdfdom_world.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libactionlib.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libtinyxml2.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/libPocoFoundation.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libdl.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libroslib.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librospack.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libpython2.7.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_program_options.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libtinyxml.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librealtime_tools.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_filesystem.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_signals.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/liblog4cxx.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_regex.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/librostime.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_system.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_thread.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_chrono.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_date_time.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libboost_atomic.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libpthread.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: /usr/lib/i386-linux-gnu/libconsole_bridge.so
+/home/patrick/reflex_control/devel/lib/libreflex_control.so: reflex_control/CMakeFiles/reflex_control.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library /home/patrick/reflex_control/devel/lib/libreflex_control.so"
+	cd /home/patrick/reflex_control/build/reflex_control && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/reflex_control.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-reflex_control/CMakeFiles/reflex_control.dir/build: /home/fischer/reflex_control/devel/lib/libreflex_control.so
+reflex_control/CMakeFiles/reflex_control.dir/build: /home/patrick/reflex_control/devel/lib/libreflex_control.so
 
 .PHONY : reflex_control/CMakeFiles/reflex_control.dir/build
 
@@ -278,10 +279,10 @@ reflex_control/CMakeFiles/reflex_control.dir/requires: reflex_control/CMakeFiles
 .PHONY : reflex_control/CMakeFiles/reflex_control.dir/requires
 
 reflex_control/CMakeFiles/reflex_control.dir/clean:
-	cd /home/fischer/reflex_control/build/reflex_control && $(CMAKE_COMMAND) -P CMakeFiles/reflex_control.dir/cmake_clean.cmake
+	cd /home/patrick/reflex_control/build/reflex_control && $(CMAKE_COMMAND) -P CMakeFiles/reflex_control.dir/cmake_clean.cmake
 .PHONY : reflex_control/CMakeFiles/reflex_control.dir/clean
 
 reflex_control/CMakeFiles/reflex_control.dir/depend:
-	cd /home/fischer/reflex_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fischer/reflex_control/src /home/fischer/reflex_control/src/reflex_control /home/fischer/reflex_control/build /home/fischer/reflex_control/build/reflex_control /home/fischer/reflex_control/build/reflex_control/CMakeFiles/reflex_control.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/patrick/reflex_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/patrick/reflex_control/src /home/patrick/reflex_control/src/reflex_control /home/patrick/reflex_control/build /home/patrick/reflex_control/build/reflex_control /home/patrick/reflex_control/build/reflex_control/CMakeFiles/reflex_control.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : reflex_control/CMakeFiles/reflex_control.dir/depend
 

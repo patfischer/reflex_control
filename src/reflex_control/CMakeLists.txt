@@ -10,7 +10,9 @@ find_package(catkin REQUIRED COMPONENTS
   controller_interface
   dynamic_reconfigure
   franka_hw
+  std_msgs
   actionlib
+  actionlib_msgs
   geometry_msgs
   hardware_interface
   message_generation
@@ -18,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   realtime_tools
   roscpp
   rospy
+  genmsg
 )
 
 find_package(Eigen3 REQUIRED)
@@ -32,7 +35,11 @@ add_service_files(FILES
   change_param.srv
 )
 
-generate_messages()
+add_action_files(DIRECTORY action FILES
+  follow_waypoints.action
+)
+
+generate_messages(DEPENDENCIES actionlib actionlib_msgs geometry_msgs)
 
 generate_dynamic_reconfigure_options(
   cfg/compliance_param.cfg
@@ -45,6 +52,9 @@ catkin_package(
     controller_interface
     dynamic_reconfigure
     franka_hw
+    std_msgs
+    actionlib
+    actionlib_msgs
     geometry_msgs
     hardware_interface
     message_runtime
@@ -74,6 +84,7 @@ add_dependencies(reflex_control
 target_link_libraries(reflex_control PUBLIC
   ${Franka_LIBRARIES}
   ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
 )
 
 target_include_directories(reflex_control SYSTEM PUBLIC

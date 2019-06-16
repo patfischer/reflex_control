@@ -1,2 +1,2 @@
 reflex_control:reflex_handler
--DCATKIN_DEVEL_PREFIX=/home/fischer/reflex_control/devel -DCMAKE_INSTALL_PREFIX=/home/fischer/reflex_control/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/patrick/reflex_control/devel -DCMAKE_INSTALL_PREFIX=/home/patrick/reflex_control/install -G Unix Makefiles
