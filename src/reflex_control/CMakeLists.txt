@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   controller_interface
   dynamic_reconfigure
   franka_hw
+  actionlib
   geometry_msgs
   hardware_interface
   message_generation

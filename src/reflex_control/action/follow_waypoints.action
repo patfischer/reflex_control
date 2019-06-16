@@ -1,0 +1,24 @@
+#goal definition
+#either one velocity/time_stamps or same as waypoints
+
+geometry_msgs/pose[] waypoints
+float64[] velocities
+duration[] time_stamps
+
+---
+#results definition
+
+geometry_msgs/pose final_pose
+int32 error_code
+int32 SUCCESSFUL = 0
+int32 PREEMPTED = -1
+int32 INVALID_GOAL = -2
+
+string error_string
+
+---
+#feedback definition
+geometry_msgs/pose desired
+geometry_msgs/pose actual
+geometry_msgs/pose error
+float64 progress
