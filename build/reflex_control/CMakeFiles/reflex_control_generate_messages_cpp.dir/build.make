@@ -53,112 +53,106 @@ CMAKE_BINARY_DIR = /home/patrick/reflex_control/build
 # Include the progress variables for this target.
 include reflex_control/CMakeFiles/reflex_control_generate_messages_cpp.dir/progress.make
 
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h
 reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/JointTorqueComparison.h
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h
-reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h
 reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h
 reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/change_param.h
 
 
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionResult.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsResult.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from reflex_control/follow_waypointsActionResult.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionResult.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from reflex_control/FollowWaypointsResult.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsGoal.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from reflex_control/follow_waypointsGoal.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsGoal.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from reflex_control/FollowWaypointsActionGoal.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsFeedback.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from reflex_control/follow_waypointsFeedback.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsFeedback.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from reflex_control/FollowWaypointsFeedback.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from reflex_control/FollowWaypointsAction.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from reflex_control/FollowWaypointsActionFeedback.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/patrick/reflex_control/devel/include/reflex_control/JointTorqueComparison.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/patrick/reflex_control/devel/include/reflex_control/JointTorqueComparison.h: /home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg
 /home/patrick/reflex_control/devel/include/reflex_control/JointTorqueComparison.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from reflex_control/JointTorqueComparison.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from reflex_control/JointTorqueComparison.msg"
 	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionFeedback.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsFeedback.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from reflex_control/follow_waypointsActionFeedback.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionFeedback.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsAction.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsGoal.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsResult.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsFeedback.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionGoal.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionResult.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionFeedback.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from reflex_control/follow_waypointsAction.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsAction.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsResult.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from reflex_control/follow_waypointsResult.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsResult.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
-
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionGoal.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsGoal.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from reflex_control/follow_waypointsActionGoal.msg"
-	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionGoal.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from reflex_control/FollowWaypointsActionResult.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h: /home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg
 /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from reflex_control/ControllerSwitch.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from reflex_control/ControllerSwitch.msg"
 	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h: /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from reflex_control/FollowWaypointsGoal.msg"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/patrick/reflex_control/devel/include/reflex_control/change_param.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/patrick/reflex_control/devel/include/reflex_control/change_param.h: /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv
@@ -168,15 +162,15 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/re
 	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 reflex_control_generate_messages_cpp: reflex_control/CMakeFiles/reflex_control_generate_messages_cpp
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionResult.h
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsGoal.h
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsFeedback.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsFeedback.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsAction.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionFeedback.h
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/JointTorqueComparison.h
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionFeedback.h
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsAction.h
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsResult.h
-reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/follow_waypointsActionGoal.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionResult.h
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/change_param.h
 reflex_control_generate_messages_cpp: reflex_control/CMakeFiles/reflex_control_generate_messages_cpp.dir/build.make
 

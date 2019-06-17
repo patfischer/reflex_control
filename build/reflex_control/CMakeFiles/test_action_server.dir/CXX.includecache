@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/patrick/reflex_control/src/reflex_control/src/test_action_server.cpp
+string
+-
+memory
+-
+boost/shared_ptr.hpp
+-
+boost/dynamic_bitset.hpp
+-
+ros/ros.h
+-
+ros/node_handle.h
+-
+ros/time.h
+-
+Eigen/Dense
+-
+actionlib/server/action_server.h
+-
+reflex_control/Follow_Waypoints.h
+-
+

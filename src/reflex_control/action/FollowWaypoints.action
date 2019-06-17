@@ -3,12 +3,13 @@
 
 geometry_msgs/Pose[] waypoints
 float64[] velocities
-duration[] time_stamps
+duration[] segment_durations
 
 ---
 #results definition
 
-geometry_msgs/Pose final_pose
+#geometry_msgs/Pose final_pose
+
 int32 error_code
 int32 SUCCESSFUL = 0
 int32 PREEMPTED = -1

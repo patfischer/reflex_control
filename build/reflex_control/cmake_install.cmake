@@ -44,18 +44,18 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/reflex_control/action" TYPE FILE FILES "/home/patrick/reflex_control/src/reflex_control/action/follow_waypoints.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/reflex_control/action" TYPE FILE FILES "/home/patrick/reflex_control/src/reflex_control/action/FollowWaypoints.action")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/reflex_control/msg" TYPE FILE FILES
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsAction.msg"
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionGoal.msg"
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionResult.msg"
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsActionFeedback.msg"
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsGoal.msg"
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsResult.msg"
-    "/home/patrick/reflex_control/devel/share/reflex_control/msg/follow_waypointsFeedback.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
+    "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
     )
 endif()
 

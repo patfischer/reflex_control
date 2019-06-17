@@ -36,7 +36,7 @@ add_service_files(FILES
 )
 
 add_action_files(DIRECTORY action FILES
-  follow_waypoints.action
+  FollowWaypoints.action
 )
 
 generate_messages(DEPENDENCIES actionlib actionlib_msgs geometry_msgs)
@@ -63,6 +63,38 @@ catkin_package(
     roscpp
   DEPENDS Franka
 )
+
+#test_action_server
+add_executable(test_action_node src/test_action_server.cpp)
+target_link_libraries(test_action_node 
+  ${Franka_LIBRARIES}
+  ${catkin_LIBRARIES}
+)
+target_include_directories(test_action_node SYSTEM PUBLIC
+  ${Franka_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
+)
+add_dependencies(test_action_node
+  ${${PROJECT_NAME}_EXPORTED_TARGETS}
+  ${catkin_EXPORTED_TARGETS}
+)
+#test_action_client
+add_executable(test_action_client src/test_action_client.cpp)
+target_link_libraries(test_action_client 
+  ${Franka_LIBRARIES}
+  ${catkin_LIBRARIES}
+)
+target_include_directories(test_action_client SYSTEM PUBLIC
+  ${Franka_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
+  ${catkin_INCLUDE_DIRS}
+)
+add_dependencies(test_action_client
+  ${${PROJECT_NAME}_EXPORTED_TARGETS}
+  ${catkin_EXPORTED_TARGETS}
+)
+
 
 add_library(reflex_control
   src/cartesian_impedance_controller.cpp
