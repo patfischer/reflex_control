@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "reflex_control: 9 messages, 1 services")
+message(STATUS "reflex_control: 9 messages, 2 services")
 
 set(MSG_I_FLAGS "-Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg;-Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg;-Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -50,6 +50,11 @@ add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
+)
+
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" ""
 )
 
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
@@ -135,6 +140,12 @@ _generate_srv_cpp(reflex_control
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
+_generate_srv_cpp(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
+)
 
 ### Generating Module File
 _generate_module_cpp(reflex_control
@@ -161,6 +172,8 @@ add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_m
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
@@ -240,6 +253,12 @@ _generate_srv_eus(reflex_control
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
+_generate_srv_eus(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
+)
 
 ### Generating Module File
 _generate_module_eus(reflex_control
@@ -266,6 +285,8 @@ add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_m
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
@@ -345,6 +366,12 @@ _generate_srv_lisp(reflex_control
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
+_generate_srv_lisp(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
+)
 
 ### Generating Module File
 _generate_module_lisp(reflex_control
@@ -371,6 +398,8 @@ add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
@@ -450,6 +479,12 @@ _generate_srv_nodejs(reflex_control
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
+_generate_srv_nodejs(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
+)
 
 ### Generating Module File
 _generate_module_nodejs(reflex_control
@@ -476,6 +511,8 @@ add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generat
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
@@ -555,6 +592,12 @@ _generate_srv_py(reflex_control
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
+_generate_srv_py(reflex_control
+  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
+)
 
 ### Generating Module File
 _generate_module_py(reflex_control
@@ -581,6 +624,8 @@ add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_me
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})

@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/msg/ControllerSwitch.l"
   "/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/msg/FollowWaypointsGoal.l"
   "/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/change_param.l"
+  "/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/switch_control_mode.l"
   "/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/manifest.l"
 )
 

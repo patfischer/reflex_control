@@ -323,7 +323,7 @@ geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/geometry_msgs/cmake
 gmock_BINARY_DIR:STATIC=/home/patrick/reflex_control/build/gtest
 
 //Dependencies for the target
-gmock_LIB_DEPENDS:STATIC=general;-pthread;
+gmock_LIB_DEPENDS:STATIC=general;-lpthread;
 
 //Value Computed by CMake
 gmock_SOURCE_DIR:STATIC=/usr/src/gmock
@@ -332,13 +332,13 @@ gmock_SOURCE_DIR:STATIC=/usr/src/gmock
 gmock_build_tests:BOOL=OFF
 
 //Dependencies for the target
-gmock_main_LIB_DEPENDS:STATIC=general;-pthread;
+gmock_main_LIB_DEPENDS:STATIC=general;-lpthread;
 
 //Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/patrick/reflex_control/build/gtest/gtest
 
 //Dependencies for the target
-gtest_LIB_DEPENDS:STATIC=general;-pthread;
+gtest_LIB_DEPENDS:STATIC=general;-lpthread;
 
 //Value Computed by CMake
 gtest_SOURCE_DIR:STATIC=/usr/src/gtest
@@ -357,7 +357,7 @@ gtest_disable_pthreads:BOOL=OFF
 gtest_force_shared_crt:BOOL=OFF
 
 //Dependencies for the target
-gtest_main_LIB_DEPENDS:STATIC=general;-pthread;general;gtest;
+gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //The directory containing a CMake configuration file for hardware_interface.
 hardware_interface_DIR:PATH=/opt/ros/kinetic/share/hardware_interface/cmake

@@ -63,6 +63,7 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/re
 reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h
 reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h
 reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/change_param.h
+reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h
 
 
 /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -161,6 +162,13 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_cpp: /home/patrick/re
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from reflex_control/change_param.srv"
 	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
 
+/home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h: /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv
+/home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from reflex_control/switch_control_mode.srv"
+	cd /home/patrick/reflex_control/src/reflex_control && /home/patrick/reflex_control/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/include/reflex_control -e /opt/ros/kinetic/share/gencpp/cmake/..
+
 reflex_control_generate_messages_cpp: reflex_control/CMakeFiles/reflex_control_generate_messages_cpp
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsResult.h
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsActionGoal.h
@@ -172,6 +180,7 @@ reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h
 reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/change_param.h
+reflex_control_generate_messages_cpp: /home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h
 reflex_control_generate_messages_cpp: reflex_control/CMakeFiles/reflex_control_generate_messages_cpp.dir/build.make
 
 .PHONY : reflex_control_generate_messages_cpp

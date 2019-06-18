@@ -63,6 +63,7 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/re
 reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/msg/ControllerSwitch.l
 reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/msg/FollowWaypointsGoal.l
 reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/change_param.l
+reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/switch_control_mode.l
 reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/manifest.l
 
 
@@ -151,8 +152,13 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_eus: /home/patrick/re
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating EusLisp code from reflex_control/change_param.srv"
 	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv
 
+/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/switch_control_mode.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/switch_control_mode.l: /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating EusLisp code from reflex_control/switch_control_mode.srv"
+	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv
+
 /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating EusLisp manifest code for reflex_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating EusLisp manifest code for reflex_control"
 	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control reflex_control actionlib actionlib_msgs geometry_msgs
 
 reflex_control_generate_messages_eus: reflex_control/CMakeFiles/reflex_control_generate_messages_eus
@@ -166,6 +172,7 @@ reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/r
 reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/msg/ControllerSwitch.l
 reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/msg/FollowWaypointsGoal.l
 reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/change_param.l
+reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/srv/switch_control_mode.l
 reflex_control_generate_messages_eus: /home/patrick/reflex_control/devel/share/roseus/ros/reflex_control/manifest.l
 reflex_control_generate_messages_eus: reflex_control/CMakeFiles/reflex_control_generate_messages_eus.dir/build.make
 

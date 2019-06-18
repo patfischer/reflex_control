@@ -63,6 +63,7 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/ref
 reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_ControllerSwitch.py
 reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsGoal.py
 reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_change_param.py
+reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py
 reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py
 reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py
 
@@ -152,6 +153,11 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/ref
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python code from SRV reflex_control/change_param"
 	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv
 
+/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py: /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python code from SRV reflex_control/switch_control_mode"
+	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv
+
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsResult.py
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsActionGoal.py
@@ -163,7 +169,8 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/ref
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_ControllerSwitch.py
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsGoal.py
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_change_param.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python msg __init__.py for reflex_control"
+/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python msg __init__.py for reflex_control"
 	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg --initpy
 
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -177,7 +184,8 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_py: /home/patrick/ref
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_ControllerSwitch.py
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsGoal.py
 /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_change_param.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python srv __init__.py for reflex_control"
+/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python srv __init__.py for reflex_control"
 	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv --initpy
 
 reflex_control_generate_messages_py: reflex_control/CMakeFiles/reflex_control_generate_messages_py
@@ -191,6 +199,7 @@ reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/pyth
 reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_ControllerSwitch.py
 reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsGoal.py
 reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_change_param.py
+reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py
 reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py
 reflex_control_generate_messages_py: /home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py
 reflex_control_generate_messages_py: reflex_control/CMakeFiles/reflex_control_generate_messages_py.dir/build.make

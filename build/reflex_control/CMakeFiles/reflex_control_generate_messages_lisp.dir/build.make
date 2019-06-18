@@ -63,6 +63,7 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_lisp: /home/patrick/r
 reflex_control/CMakeFiles/reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/ControllerSwitch.lisp
 reflex_control/CMakeFiles/reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/FollowWaypointsGoal.lisp
 reflex_control/CMakeFiles/reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/change_param.lisp
+reflex_control/CMakeFiles/reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/switch_control_mode.lisp
 
 
 /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/FollowWaypointsResult.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
@@ -150,6 +151,11 @@ reflex_control/CMakeFiles/reflex_control_generate_messages_lisp: /home/patrick/r
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Lisp code from reflex_control/change_param.srv"
 	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/patrick/reflex_control/src/reflex_control/srv/change_param.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv
 
+/home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/switch_control_mode.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/switch_control_mode.lisp: /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/patrick/reflex_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Lisp code from reflex_control/switch_control_mode.srv"
+	cd /home/patrick/reflex_control/build/reflex_control && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv -Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg -Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg -Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p reflex_control -o /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv
+
 reflex_control_generate_messages_lisp: reflex_control/CMakeFiles/reflex_control_generate_messages_lisp
 reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/FollowWaypointsResult.lisp
 reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/FollowWaypointsActionGoal.lisp
@@ -161,6 +167,7 @@ reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/
 reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/ControllerSwitch.lisp
 reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/FollowWaypointsGoal.lisp
 reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/change_param.lisp
+reflex_control_generate_messages_lisp: /home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/switch_control_mode.lisp
 reflex_control_generate_messages_lisp: reflex_control/CMakeFiles/reflex_control_generate_messages_lisp.dir/build.make
 
 .PHONY : reflex_control_generate_messages_lisp

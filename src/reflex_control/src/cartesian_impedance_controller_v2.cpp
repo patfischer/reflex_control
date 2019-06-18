@@ -104,8 +104,6 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   cartesian_stiffness_.setZero();
   cartesian_damping_.setZero();
 
-  impReflex_init();
-
   return true;
 }
 
@@ -247,8 +245,6 @@ bool CartesianImpedanceController::switchControllerModeCB(reflex_control::switch
   return true;
 }
 
-
-// Impedance reflex (stop at current position)
 void CartesianImpedanceController::impReflex_init() {
   // @ToDo: dynamic reconf callback for parameters?
 
@@ -260,6 +256,7 @@ void CartesianImpedanceController::impReflex_init() {
 }
 
 void CartesianImpedanceController::impReflex_start() {
+    // compute initial velocity with jacobian and set x_attractor and q_d_nullspace
   // to initial configuration
   franka::RobotState initial_state = state_handle_->getRobotState();
   Eigen::Map<Eigen::Matrix<double, 7, 1>> q_initial(initial_state.q.data());
@@ -300,96 +297,6 @@ void CartesianImpedanceController::impReflex_update(const ros::Time& time,
   }
   // "difference" quaternion
   Eigen::Quaterniond error_quaternion(orientation * impReflex_orientation_desired.inverse());
-  // convert to axis angle
-  Eigen::AngleAxisd error_quaternion_angle_axis(error_quaternion);
-  // compute "orientation error"
-  error.tail(3) << error_quaternion_angle_axis.axis() * error_quaternion_angle_axis.angle();
-
-  // compute control
-  // allocate variables
-  Eigen::VectorXd tau_task(7), tau_nullspace(7), tau_d(7);
-
-  // pseudoinverse for nullspace handling
-  // kinematic pseuoinverse
-  Eigen::MatrixXd jacobian_transpose_pinv;
-  pseudoInverse(jacobian.transpose(), jacobian_transpose_pinv);
-
-  // Cartesian PD control with damping ratio = 1
-  tau_task << jacobian.transpose() *
-                  (-impReflex_cartesian_stiffness * error - impReflex_cartesian_damping * (jacobian * dq));
-  // nullspace PD control with damping ratio = 1
-  tau_nullspace << (Eigen::MatrixXd::Identity(7, 7) -
-                    jacobian.transpose() * jacobian_transpose_pinv) *
-                       (impReflex_nullspace_stiffness * (q_d_nullspace_ - q) -
-                        (2.0 * sqrt(impReflex_nullspace_stiffness)) * dq);
-  // Desired torque
-  tau_d << tau_task + tau_nullspace + coriolis;
-  // Saturate torque rate to avoid discontinuities
-  tau_d << saturateTorqueRate(tau_d, tau_J_d);
-  for (size_t i = 0; i < 7; ++i) {
-    joint_handles_[i].setCommand(tau_d(i));
-  }
-}
-
-
-// Test Movement (circle)
-void CartesianImpedanceController::testMove_init() {
-  testMove_position_desired.setZero();
-  testMove_orientation_desired.coeffs() << 0.0, 0.0, 0.0, 1.0;
-}
-
-void CartesianImpedanceController::testMove_start() {
-  // to initial configuration
-  franka::RobotState initial_state = state_handle_->getRobotState();
-  Eigen::Map<Eigen::Matrix<double, 7, 1>> q_initial(initial_state.q.data());
-  Eigen::Affine3d initial_transform(Eigen::Matrix4d::Map(initial_state.O_T_EE.data()));
-
-  // set position desired to current state
-  testMove_position_desired = initial_transform.translation();
-  testMove_orientation_desired = Eigen::Quaterniond(initial_transform.linear());
-}
-
-void CartesianImpedanceController::testMove_update(const ros::Time& time, const ros::Duration& period) {
-  // compute next position on circle
-
-  testMove_angle += period.toSec() * testMove_vel / std::fabs(testMove_radius);
-  if (testMove_angle > 2 * M_PI) {
-    testMove_angle -= 2 * M_PI;
-  }
-  double delta_y = testMove_radius * (1 - std::cos(testMove_angle));
-  double delta_z = testMove_radius * std::sin(testMove_angle);
-  testMove_position_desired[2] += delta_y;
-  testMove_position_desired[3] += delta_z;
-
-
-  // get state variables
-  franka::RobotState robot_state = state_handle_->getRobotState();
-  std::array<double, 7> coriolis_array = model_handle_->getCoriolis();
-  std::array<double, 42> jacobian_array =
-      model_handle_->getZeroJacobian(franka::Frame::kEndEffector);
-
-  // convert to Eigen
-  Eigen::Map<Eigen::Matrix<double, 7, 1>> coriolis(coriolis_array.data());
-  Eigen::Map<Eigen::Matrix<double, 6, 7>> jacobian(jacobian_array.data());
-  Eigen::Map<Eigen::Matrix<double, 7, 1>> q(robot_state.q.data());
-  Eigen::Map<Eigen::Matrix<double, 7, 1>> dq(robot_state.dq.data());
-  Eigen::Map<Eigen::Matrix<double, 7, 1>> tau_J_d(  // NOLINT (readability-identifier-naming)
-      robot_state.tau_J_d.data());
-  Eigen::Affine3d transform(Eigen::Matrix4d::Map(robot_state.O_T_EE.data()));
-  Eigen::Vector3d position(transform.translation());
-  Eigen::Quaterniond orientation(transform.linear());
-
-  // compute error to desired pose
-  // position error
-  Eigen::Matrix<double, 6, 1> error;
-  error.head(3) << position - testMove_position_desired;
-
-  // orientation error
-  if (testMove_orientation_desired.coeffs().dot(orientation.coeffs()) < 0.0) {
-    orientation.coeffs() << -orientation.coeffs();
-  }
-  // "difference" quaternion
-  Eigen::Quaterniond error_quaternion(orientation * testMove_orientation_desired.inverse());
   // convert to axis angle
   Eigen::AngleAxisd error_quaternion_angle_axis(error_quaternion);
   // compute "orientation error"

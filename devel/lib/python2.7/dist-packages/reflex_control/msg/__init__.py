@@ -7,10 +7,3 @@ from ._FollowWaypointsFeedback import *
 from ._FollowWaypointsGoal import *
 from ._FollowWaypointsResult import *
 from ._JointTorqueComparison import *
-from ._follow_waypointsAction import *
-from ._follow_waypointsActionFeedback import *
-from ._follow_waypointsActionGoal import *
-from ._follow_waypointsActionResult import *
-from ._follow_waypointsFeedback import *
-from ._follow_waypointsGoal import *
-from ._follow_waypointsResult import *

@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+#include <std_msgs/Int32.h>
+
 #include <controller_interface/multi_interface_controller.h>
 #include <dynamic_reconfigure/server.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -19,6 +21,8 @@
 #include <franka_hw/franka_model_interface.h>
 #include <franka_hw/franka_state_interface.h>
 
+#include <reflex_control/switch_control_mode.h>
+
 namespace reflex_control {
 
 class CartesianImpedanceController : public controller_interface::MultiInterfaceController<
@@ -28,7 +32,7 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
  public:
   bool init(hardware_interface::RobotHW* robot_hw, ros::NodeHandle& node_handle) override;
   void starting(const ros::Time&) override;
-  void update(const ros::Time&, const ros::Duration& period) override;
+  void update(const ros::Time& time, const ros::Duration& period) override;
 
  private:
   // Saturation
@@ -64,6 +68,34 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   //~ // Equilibrium pose subscriber
   //~ ros::Subscriber sub_equilibrium_pose_;
   //~ void equilibriumPoseCallback(const geometry_msgs::PoseStampedConstPtr& msg);
+
+  // Switch Controller Mode and set/update Parameters
+  int control_mode;
+  ros::ServiceServer controller_switch_service;
+  bool switchControllerModeCB(reflex_control::switch_control_mode::Request &req,
+    reflex_control::switch_control_mode::Response &res);
+
+  // impedance reflex (stops at current position)
+  double impReflex_nullspace_stiffness{20.0};
+  Eigen::Matrix<double, 6, 6> impReflex_cartesian_stiffness;
+  Eigen::Matrix<double, 6, 6> impReflex_cartesian_damping;
+  // Eigen::Matrix<double, 7, 1> q_d_nullspace_;
+  Eigen::Vector3d impReflex_position_desired;
+  Eigen::Quaterniond impReflex_orientation_desired; 
+  void impReflex_init();
+  void impReflex_start();
+  void impReflex_update(const ros::Time& time, const ros::Duration& period);
+
+
+  // test movement going in a circle
+  Eigen::Vector3d testMove_position_desired;
+  Eigen::Quaterniond testMove_orientation_desired; 
+  double testMove_radius{0.1};
+  double testMove_vel{0.03};
+  double testMove_angle{0.0};
+  void testMove_init();
+  void testMove_start();
+  void testMove_update(const ros::Time& time, const ros::Duration& period);
 };
 
 }  // namespace reflex_control

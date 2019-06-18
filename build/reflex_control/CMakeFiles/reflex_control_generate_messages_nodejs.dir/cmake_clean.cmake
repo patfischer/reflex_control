@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/ControllerSwitch.js"
   "/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/msg/FollowWaypointsGoal.js"
   "/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/change_param.js"
+  "/home/patrick/reflex_control/devel/share/gennodejs/ros/reflex_control/srv/switch_control_mode.js"
 )
 
 # Per-language clean rules from dependency scanning.

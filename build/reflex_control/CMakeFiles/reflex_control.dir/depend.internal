@@ -3,6 +3,9 @@
 
 reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.cpp.o
  /home/patrick/reflex_control/devel/include/reflex_control/compliance_paramConfig.h
+ /home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h
+ /home/patrick/reflex_control/devel/include/reflex_control/switch_control_modeRequest.h
+ /home/patrick/reflex_control/devel/include/reflex_control/switch_control_modeResponse.h
  /home/patrick/reflex_control/src/reflex_control/include/reflex_control/cartesian_impedance_controller.h
  /home/patrick/reflex_control/src/reflex_control/src/cartesian_impedance_controller.cpp
  /home/patrick/reflex_control/src/reflex_control/src/pseudo_inversion.h
@@ -113,6 +116,7 @@ reflex_control/CMakeFiles/reflex_control.dir/src/cartesian_impedance_controller.
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/std_msgs/Header.h
+ /opt/ros/kinetic/include/std_msgs/Int32.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/eigen3/Eigen/Cholesky

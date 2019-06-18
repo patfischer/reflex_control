@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_ControllerSwitch.py"
   "/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/_FollowWaypointsGoal.py"
   "/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_change_param.py"
+  "/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/_switch_control_mode.py"
   "/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/msg/__init__.py"
   "/home/patrick/reflex_control/devel/lib/python2.7/dist-packages/reflex_control/srv/__init__.py"
 )

@@ -33,6 +33,7 @@ add_message_files(FILES
 
 add_service_files(FILES
   change_param.srv
+  switch_control_mode.srv
 )
 
 add_action_files(DIRECTORY action FILES

@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "/home/patrick/reflex_control/devel/include/reflex_control/ControllerSwitch.h"
   "/home/patrick/reflex_control/devel/include/reflex_control/FollowWaypointsGoal.h"
   "/home/patrick/reflex_control/devel/include/reflex_control/change_param.h"
+  "/home/patrick/reflex_control/devel/include/reflex_control/switch_control_mode.h"
 )
 
 # Per-language clean rules from dependency scanning.

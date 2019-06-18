@@ -387,6 +387,19 @@ reflex_control_generate_messages_cpp/fast:
 .PHONY : reflex_control_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback
+
+# Build rule for target.
+_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback
+.PHONY : _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback
+
+# fast build rule for target.
+_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback/fast:
+	$(MAKE) -f reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback.dir/build.make reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback.dir/build
+.PHONY : _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback/fast
+
+#=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
 
 # Build rule for target.
@@ -671,19 +684,6 @@ geometry_msgs_generate_messages_cpp: cmake_check_build_system
 geometry_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f reflex_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make reflex_control/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback
-
-# Build rule for target.
-_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback
-.PHONY : _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback
-
-# fast build rule for target.
-_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback/fast:
-	$(MAKE) -f reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback.dir/build.make reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_FollowWaypointsFeedback.dir/build
-.PHONY : _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
@@ -996,6 +996,19 @@ _reflex_control_generate_messages_check_deps_FollowWaypointsActionFeedback: cmak
 _reflex_control_generate_messages_check_deps_FollowWaypointsActionFeedback/fast:
 	$(MAKE) -f reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_FollowWaypointsActionFeedback.dir/build.make reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_FollowWaypointsActionFeedback.dir/build
 .PHONY : _reflex_control_generate_messages_check_deps_FollowWaypointsActionFeedback/fast
+
+#=============================================================================
+# Target rules for targets named _reflex_control_generate_messages_check_deps_switch_control_mode
+
+# Build rule for target.
+_reflex_control_generate_messages_check_deps_switch_control_mode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _reflex_control_generate_messages_check_deps_switch_control_mode
+.PHONY : _reflex_control_generate_messages_check_deps_switch_control_mode
+
+# fast build rule for target.
+_reflex_control_generate_messages_check_deps_switch_control_mode/fast:
+	$(MAKE) -f reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_switch_control_mode.dir/build.make reflex_control/CMakeFiles/_reflex_control_generate_messages_check_deps_switch_control_mode.dir/build
+.PHONY : _reflex_control_generate_messages_check_deps_switch_control_mode/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
@@ -1469,6 +1482,7 @@ help:
 	@echo "... reflex_control_generate_messages_lisp"
 	@echo "... reflex_control_gencpp"
 	@echo "... reflex_control_generate_messages_cpp"
+	@echo "... _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback"
 	@echo "... dynamic_reconfigure_generate_messages_nodejs"
 	@echo "... reflex_control_generate_messages_eus"
 	@echo "... actionlib_generate_messages_lisp"
@@ -1491,7 +1505,6 @@ help:
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... _reflex_control_generate_messages_check_deps_FollowWaypointsFeedback"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... dynamic_reconfigure_gencfg"
@@ -1516,6 +1529,7 @@ help:
 	@echo "... reflex_control_gennodejs"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... _reflex_control_generate_messages_check_deps_FollowWaypointsActionFeedback"
+	@echo "... _reflex_control_generate_messages_check_deps_switch_control_mode"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... _reflex_control_generate_messages_check_deps_FollowWaypointsResult"
 	@echo "... _reflex_control_generate_messages_check_deps_JointTorqueComparison"

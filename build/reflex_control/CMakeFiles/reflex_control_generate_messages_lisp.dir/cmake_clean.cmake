@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "/home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/ControllerSwitch.lisp"
   "/home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/msg/FollowWaypointsGoal.lisp"
   "/home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/change_param.lisp"
+  "/home/patrick/reflex_control/devel/share/common-lisp/ros/reflex_control/srv/switch_control_mode.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

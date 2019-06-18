@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg;/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
-services_str = "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+services_str = "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv;/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
 pkg_name = "reflex_control"
 dependencies_str = "actionlib;actionlib_msgs;geometry_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

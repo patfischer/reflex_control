@@ -282,7 +282,8 @@ void CartesianImpedanceControllerCropped::complianceParamCallback(
   //~ }
 //~ }
 
-void CartesianImpedanceControllerCropped::controllerSwitchCallback(const std_msgs::Int32& msg) {
+void CartesianImpedanceControllerCropped::controllerSwitchCallback(
+  const std_msgs::Int32& msg) {
 	ROS_INFO("switch controller to %d", msg.data);
 	controllerState = msg.data;
 }

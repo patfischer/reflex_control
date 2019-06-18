@@ -40,7 +40,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/reflex_control/srv" TYPE FILE FILES "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/reflex_control/srv" TYPE FILE FILES
+    "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+    "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
