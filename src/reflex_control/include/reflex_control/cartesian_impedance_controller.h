@@ -35,6 +35,8 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   void update(const ros::Time& time, const ros::Duration& period) override;
 
  private:
+  std::string name_; // Debugger name
+  	
   // Saturation
   Eigen::Matrix<double, 7, 1> saturateTorqueRate(
       const Eigen::Matrix<double, 7, 1>& tau_d_calculated,
@@ -88,10 +90,10 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
 
 
   // test movement going in a circle
-  Eigen::Vector3d testMove_position_desired;
-  Eigen::Quaterniond testMove_orientation_desired; 
-  double testMove_radius{0.1};
-  double testMove_vel{0.03};
+  Eigen::Vector3d testMove_position_initial;
+  Eigen::Quaterniond testMove_orientation_initial; 
+  double testMove_radius{0.2};
+  double testMove_vel{0.2};
   double testMove_angle{0.0};
   void testMove_init();
   void testMove_start();

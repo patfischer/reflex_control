@@ -133,6 +133,8 @@ void JointImpedanceController::starting(const ros::Time& /*time*/) {
 
 void JointImpedanceController::update(const ros::Time& /*time*/,
                                              const ros::Duration& period) {
+  ROS_DEBUG_THROTTLE_NAMED(1, "Joint_impedance_controller", "period: %f", period.toSec());
+  
   if (vel_current_ < vel_max_) {
     vel_current_ += period.toSec() * std::fabs(vel_max_ / acceleration_time_);
   }

@@ -2,7 +2,7 @@
 
 message(STATUS "reflex_control: 9 messages, 2 services")
 
-set(MSG_I_FLAGS "-Ireflex_control:/home/patrick/reflex_control/src/reflex_control/msg;-Ireflex_control:/home/patrick/reflex_control/devel/share/reflex_control/msg;-Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ireflex_control:/home/fischer/reflex_control/src/reflex_control/msg;-Ireflex_control:/home/fischer/reflex_control/devel/share/reflex_control/msg;-Iactionlib:/opt/ros/kinetic/share/actionlib/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,59 +17,59 @@ add_custom_target(reflex_control_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" "geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point:reflex_control/FollowWaypointsFeedback:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" "geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point:reflex_control/FollowWaypointsFeedback:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus"
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" "geometry_msgs/Pose:reflex_control/FollowWaypointsActionFeedback:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point:reflex_control/FollowWaypointsActionResult:reflex_control/FollowWaypointsFeedback:reflex_control/FollowWaypointsResult:reflex_control/FollowWaypointsActionGoal:actionlib_msgs/GoalID:reflex_control/FollowWaypointsGoal:actionlib_msgs/GoalStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" "reflex_control/FollowWaypointsResult:actionlib_msgs/GoalID:std_msgs/Header:actionlib_msgs/GoalStatus"
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" ""
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" ""
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" ""
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" "geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point:actionlib_msgs/GoalID:reflex_control/FollowWaypointsGoal"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" ""
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" ""
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" "reflex_control/FollowWaypointsResult:geometry_msgs/Pose:std_msgs/Header:reflex_control/FollowWaypointsActionFeedback:geometry_msgs/Quaternion:geometry_msgs/Point:reflex_control/FollowWaypointsFeedback:reflex_control/FollowWaypointsActionGoal:reflex_control/FollowWaypointsGoal:actionlib_msgs/GoalStatus:actionlib_msgs/GoalID:reflex_control/FollowWaypointsActionResult"
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" "reflex_control/FollowWaypointsResult:actionlib_msgs/GoalID:std_msgs/Header:actionlib_msgs/GoalStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" "geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Point:reflex_control/FollowWaypointsGoal:actionlib_msgs/GoalID"
 )
 
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
 add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "reflex_control" "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
 #
@@ -79,55 +79,55 @@ add_custom_target(_reflex_control_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_cpp(reflex_control
+  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
-)
-_generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
-)
-_generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
-  "${MSG_I_FLAGS}"
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
-)
-_generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_cpp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_cpp(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_cpp(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
@@ -135,13 +135,13 @@ _generate_msg_cpp(reflex_control
 
 ### Generating Services
 _generate_srv_cpp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
 )
 _generate_srv_cpp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/reflex_control
@@ -159,27 +159,27 @@ add_custom_target(reflex_control_generate_messages_cpp
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_cpp _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -192,55 +192,55 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_cp
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
+)
+_generate_msg_eus(reflex_control
+  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
 _generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
-)
-_generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
 _generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
 _generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
-)
-_generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
 _generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
-  "${MSG_I_FLAGS}"
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
-)
-_generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
 _generate_msg_eus(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
+)
+_generate_msg_eus(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
+)
+_generate_msg_eus(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
@@ -248,13 +248,13 @@ _generate_msg_eus(reflex_control
 
 ### Generating Services
 _generate_srv_eus(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
 )
 _generate_srv_eus(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/reflex_control
@@ -272,27 +272,27 @@ add_custom_target(reflex_control_generate_messages_eus
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_eus _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -305,55 +305,55 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_eu
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_lisp(reflex_control
+  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
-)
-_generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
-)
-_generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
-  "${MSG_I_FLAGS}"
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
-)
-_generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
 _generate_msg_lisp(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_lisp(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
+)
+_generate_msg_lisp(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
@@ -361,13 +361,13 @@ _generate_msg_lisp(reflex_control
 
 ### Generating Services
 _generate_srv_lisp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
 )
 _generate_srv_lisp(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/reflex_control
@@ -385,27 +385,27 @@ add_custom_target(reflex_control_generate_messages_lisp
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_lisp _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -418,55 +418,55 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_li
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
+)
+_generate_msg_nodejs(reflex_control
+  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
 _generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
-)
-_generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
 _generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
 _generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
-)
-_generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
 _generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
-  "${MSG_I_FLAGS}"
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
-)
-_generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
 _generate_msg_nodejs(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
+)
+_generate_msg_nodejs(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
+)
+_generate_msg_nodejs(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
@@ -474,13 +474,13 @@ _generate_msg_nodejs(reflex_control
 
 ### Generating Services
 _generate_srv_nodejs(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
 )
 _generate_srv_nodejs(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/reflex_control
@@ -498,27 +498,27 @@ add_custom_target(reflex_control_generate_messages_nodejs
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_nodejs _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -531,55 +531,55 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS reflex_control_generate_messages_no
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
+)
+_generate_msg_py(reflex_control
+  "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
 _generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
-)
-_generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
 _generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
 _generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
-)
-_generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
 _generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
-  "${MSG_I_FLAGS}"
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
-)
-_generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
+  "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
 _generate_msg_py(reflex_control
-  "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
+)
+_generate_msg_py(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg"
+  "${MSG_I_FLAGS}"
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
+)
+_generate_msg_py(reflex_control
+  "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
@@ -587,13 +587,13 @@ _generate_msg_py(reflex_control
 
 ### Generating Services
 _generate_srv_py(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
 )
 _generate_srv_py(reflex_control
-  "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
+  "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/reflex_control
@@ -611,27 +611,27 @@ add_custom_target(reflex_control_generate_messages_py
 add_dependencies(reflex_control_generate_messages reflex_control_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/JointTorqueComparison.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/srv/change_param.srv" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsResult.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/srv/switch_control_mode.srv" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsAction.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionResult.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsActionGoal.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/patrick/reflex_control/src/reflex_control/msg/ControllerSwitch.msg" NAME_WE)
+get_filename_component(_filename "/home/fischer/reflex_control/devel/share/reflex_control/msg/FollowWaypointsFeedback.msg" NAME_WE)
 add_dependencies(reflex_control_generate_messages_py _reflex_control_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

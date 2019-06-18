@@ -20,7 +20,9 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   //~ sub_equilibrium_pose_ = node_handle.subscribe(
       //~ "/equilibrium_pose", 20, &CartesianImpedanceController::equilibriumPoseCallback, this,
       //~ ros::TransportHints().reliable().tcpNoDelay());
-
+  
+  name_ = "Reflex Controller";
+  
   // advertise switchControllerMode service
   controller_switch_service = node_handle.advertiseService(
     "switchController", &CartesianImpedanceController::switchControllerModeCB, this);
@@ -132,15 +134,20 @@ void CartesianImpedanceController::starting(const ros::Time& /*time*/) {
   q_d_nullspace_ = q_initial;
 
   // initial control mode
+  impReflex_start();
   control_mode = 1;
 }
 
 void CartesianImpedanceController::update(const ros::Time& time,
                                                  const ros::Duration& period) {
+  //~ ROS_DEBUG_THROTTLE_NAMED(1, name_, "Update: period: %f", period.toSec());
   switch(control_mode) {
   case 1:
     impReflex_update(time, period);
     break;
+  case 2:
+	testMove_update(time, period);
+	break;
   default:
     impReflex_start();
     impReflex_update(time, period);
@@ -234,6 +241,7 @@ bool CartesianImpedanceController::switchControllerModeCB(reflex_control::switch
     case 2:
       ROS_INFO("Reflex 1");
       // @ToDo: fill initialisation of parameters
+      testMove_start();
       control_mode = req.mode;
       res.ok = true;
       break;
@@ -334,8 +342,8 @@ void CartesianImpedanceController::impReflex_update(const ros::Time& time,
 
 // Test Movement (circle)
 void CartesianImpedanceController::testMove_init() {
-  testMove_position_desired.setZero();
-  testMove_orientation_desired.coeffs() << 0.0, 0.0, 0.0, 1.0;
+  testMove_position_initial.setZero();
+  testMove_orientation_initial.coeffs() << 0.0, 0.0, 0.0, 1.0;
 }
 
 void CartesianImpedanceController::testMove_start() {
@@ -345,22 +353,30 @@ void CartesianImpedanceController::testMove_start() {
   Eigen::Affine3d initial_transform(Eigen::Matrix4d::Map(initial_state.O_T_EE.data()));
 
   // set position desired to current state
-  testMove_position_desired = initial_transform.translation();
-  testMove_orientation_desired = Eigen::Quaterniond(initial_transform.linear());
+  testMove_position_initial = initial_transform.translation();
+  testMove_orientation_initial = Eigen::Quaterniond(initial_transform.linear());
+  testMove_angle = 0;
+  ROS_DEBUG_NAMED(name_, "testMove_start: at pos: %4.2f | %4.2f | %4.2f", 
+	testMove_position_initial[0], testMove_position_initial[1], testMove_position_initial[2]);
 }
 
 void CartesianImpedanceController::testMove_update(const ros::Time& time, const ros::Duration& period) {
   // compute next position on circle
-
+  //~ ROS_DEBUG_THROTTLE_NAMED(1, name_, "testMove_update: period: %f", period.toSec());
+  
   testMove_angle += period.toSec() * testMove_vel / std::fabs(testMove_radius);
   if (testMove_angle > 2 * M_PI) {
     testMove_angle -= 2 * M_PI;
   }
-  double delta_y = testMove_radius * (1 - std::cos(testMove_angle));
-  double delta_z = testMove_radius * std::sin(testMove_angle);
-  testMove_position_desired[2] += delta_y;
-  testMove_position_desired[3] += delta_z;
+  //~ ROS_DEBUG_THROTTLE_NAMED(0.01, name_, "testMove_update: angle = %f", testMove_angle);
 
+  Eigen::Vector3d testMove_position_desired = testMove_position_initial;
+  //~ double delta_y = testMove_radius * (1 - std::cos(testMove_angle));
+  double delta_z = testMove_radius * std::sin(testMove_angle);
+  //~ testMove_position_desired[1] += delta_y;
+  testMove_position_desired[2] += delta_z;
+  //~ ROS_DEBUG_THROTTLE_NAMED(0.01, name_, "testMove_update: delta_y = %f; delta_z = %f", delta_y, delta_z);
+  ROS_DEBUG_THROTTLE_NAMED(0.01, name_, "testMove_update: pos_d: %f; %f; %f", testMove_position_desired[0], testMove_position_desired[1], testMove_position_desired[2]);
 
   // get state variables
   franka::RobotState robot_state = state_handle_->getRobotState();
@@ -385,11 +401,11 @@ void CartesianImpedanceController::testMove_update(const ros::Time& time, const 
   error.head(3) << position - testMove_position_desired;
 
   // orientation error
-  if (testMove_orientation_desired.coeffs().dot(orientation.coeffs()) < 0.0) {
+  if (testMove_orientation_initial.coeffs().dot(orientation.coeffs()) < 0.0) {
     orientation.coeffs() << -orientation.coeffs();
   }
   // "difference" quaternion
-  Eigen::Quaterniond error_quaternion(orientation * testMove_orientation_desired.inverse());
+  Eigen::Quaterniond error_quaternion(orientation * testMove_orientation_initial.inverse());
   // convert to axis angle
   Eigen::AngleAxisd error_quaternion_angle_axis(error_quaternion);
   // compute "orientation error"

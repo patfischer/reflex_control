@@ -67,14 +67,14 @@ set(reflex_handler_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(reflex_handler_SOURCE_PREFIX /home/patrick/reflex_control/src/reflex_handler)
-  set(reflex_handler_DEVEL_PREFIX /home/patrick/reflex_control/devel)
+  set(reflex_handler_SOURCE_PREFIX /home/fischer/reflex_control/src/reflex_handler)
+  set(reflex_handler_DEVEL_PREFIX /home/fischer/reflex_control/devel)
   set(reflex_handler_INSTALL_PREFIX "")
   set(reflex_handler_PREFIX ${reflex_handler_DEVEL_PREFIX})
 else()
   set(reflex_handler_SOURCE_PREFIX "")
   set(reflex_handler_DEVEL_PREFIX "")
-  set(reflex_handler_INSTALL_PREFIX /home/patrick/reflex_control/install)
+  set(reflex_handler_INSTALL_PREFIX /home/fischer/reflex_control/install)
   set(reflex_handler_PREFIX ${reflex_handler_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(reflex_handler_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/patrick/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka " STREQUAL " ")
+if(NOT "/home/fischer/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka " STREQUAL " ")
   set(reflex_handler_INCLUDE_DIRS "")
-  set(_include_dirs "/home/patrick/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka")
+  set(_include_dirs "/home/fischer/reflex_control/devel/include;/opt/ros/kinetic/include/libfranka")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/patrick/reflex_control/devel/include;/opt/ros/kinetic/include/libf
         message(FATAL_ERROR "Project 'reflex_handler' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'reflex_handler' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/patrick/reflex_control/src/reflex_handler/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'reflex_handler' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/fischer/reflex_control/src/reflex_handler/${idir}'.  ${_report}")
     endif()
     _list_append_unique(reflex_handler_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/patrick/reflex_control/devel/lib;/home/patrick/reflex_control/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/fischer/reflex_control/devel/lib;/home/fischer/reflex_control/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
