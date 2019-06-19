@@ -67,10 +67,10 @@ int main(int argc, char** argv)
 
 	GoalHandle gh = ac_.sendGoal(goal, boost::bind(transCB,_1)); //TransitionCB -> done, active, feedback
 
-	// ROS_INFO("wait 2s");
-	// ros::Duration(2).sleep();
-	// ROS_INFO("cancel goal");
-	// gh.cancel();
+	ROS_INFO("wait 2s");
+	ros::Duration(2).sleep();
+	ROS_INFO("cancel goal");
+	gh.cancel();
 
 
 	ros::spin();

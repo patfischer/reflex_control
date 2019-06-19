@@ -92,8 +92,8 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   // test movement going in a circle
   Eigen::Vector3d testMove_position_initial;
   Eigen::Quaterniond testMove_orientation_initial; 
-  double testMove_radius{0.2};
-  double testMove_vel{0.2};
+  double testMove_radius{0.25};
+  double testMove_vel{0.5};
   double testMove_angle{0.0};
   void testMove_init();
   void testMove_start();
