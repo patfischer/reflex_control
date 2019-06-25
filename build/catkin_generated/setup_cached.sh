@@ -7,5 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/fischer/reflex_control/build"
+export PWD="/home/patrick/reflex_control/build"
 export ROS_PACKAGE_PATH="/home/patrick/reflex_control/src:/home/fischer/reflex_control/src:/opt/ros/kinetic/share"

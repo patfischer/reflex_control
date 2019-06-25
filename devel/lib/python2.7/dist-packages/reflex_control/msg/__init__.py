@@ -7,3 +7,4 @@ from ._FollowWaypointsFeedback import *
 from ._FollowWaypointsGoal import *
 from ._FollowWaypointsResult import *
 from ._JointTorqueComparison import *
+from ._cartesian_waypoint import *

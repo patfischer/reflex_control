@@ -25,4 +25,6 @@
     (:file "_package_FollowWaypointsResult" :depends-on ("_package"))
     (:file "JointTorqueComparison" :depends-on ("_package_JointTorqueComparison"))
     (:file "_package_JointTorqueComparison" :depends-on ("_package"))
+    (:file "cartesian_waypoint" :depends-on ("_package_cartesian_waypoint"))
+    (:file "_package_cartesian_waypoint" :depends-on ("_package"))
   ))

@@ -29,6 +29,7 @@ find_package(Franka 0.5.0 REQUIRED)
 add_message_files(FILES
   JointTorqueComparison.msg
   ControllerSwitch.msg
+  cartesian_waypoint.msg
 )
 
 add_service_files(FILES

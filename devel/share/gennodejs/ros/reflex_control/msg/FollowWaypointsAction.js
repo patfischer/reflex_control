@@ -86,7 +86,7 @@ class FollowWaypointsAction {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '4366dd9f281e44a1bbb4fdcdce4ece11';
+    return '7cebd5ee9a899c5c4f548d1acdb7fd88';
   }
 
   static messageDefinition() {
@@ -143,10 +143,16 @@ class FollowWaypointsAction {
     #goal definition
     #either one velocity/time_stamps or same as waypoints
     
-    geometry_msgs/Pose[] waypoints
-    float64[] velocities
-    duration[] segment_durations
+    cartesian_waypoint[] waypoints
     
+    
+    ================================================================================
+    MSG: reflex_control/cartesian_waypoint
+    geometry_msgs/Pose wp
+    float64 vel
+    duration dur
+    float64 tol_trans
+    float64 tol_angle
     
     ================================================================================
     MSG: geometry_msgs/Pose

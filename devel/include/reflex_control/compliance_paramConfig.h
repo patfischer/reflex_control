@@ -239,12 +239,38 @@ class DEFAULT
         if("translational_stiffness"==(*_i)->name){translational_stiffness = boost::any_cast<double>(val);}
         if("rotational_stiffness"==(*_i)->name){rotational_stiffness = boost::any_cast<double>(val);}
         if("nullspace_stiffness"==(*_i)->name){nullspace_stiffness = boost::any_cast<double>(val);}
+        if("gravReflex_translational_stiffness"==(*_i)->name){gravReflex_translational_stiffness = boost::any_cast<double>(val);}
+        if("gravReflex_rotational_stiffness"==(*_i)->name){gravReflex_rotational_stiffness = boost::any_cast<double>(val);}
+        if("gravReflex_nullspace_stiffness"==(*_i)->name){gravReflex_nullspace_stiffness = boost::any_cast<double>(val);}
+        if("impReflex_translational_stiffness"==(*_i)->name){impReflex_translational_stiffness = boost::any_cast<double>(val);}
+        if("impReflex_rotational_stiffness"==(*_i)->name){impReflex_rotational_stiffness = boost::any_cast<double>(val);}
+        if("impReflex_nullspace_stiffness"==(*_i)->name){impReflex_nullspace_stiffness = boost::any_cast<double>(val);}
+        if("cptc_translational_stiffness"==(*_i)->name){cptc_translational_stiffness = boost::any_cast<double>(val);}
+        if("cptc_rotational_stiffness"==(*_i)->name){cptc_rotational_stiffness = boost::any_cast<double>(val);}
+        if("cptc_nullspace_stiffness"==(*_i)->name){cptc_nullspace_stiffness = boost::any_cast<double>(val);}
+        if("cptc_vel"==(*_i)->name){cptc_vel = boost::any_cast<double>(val);}
+        if("cptc_vel_rotation"==(*_i)->name){cptc_vel_rotation = boost::any_cast<double>(val);}
+        if("cptc_tol_trans"==(*_i)->name){cptc_tol_trans = boost::any_cast<double>(val);}
+        if("cptc_tol_rot"==(*_i)->name){cptc_tol_rot = boost::any_cast<double>(val);}
       }
     }
 
     double translational_stiffness;
 double rotational_stiffness;
 double nullspace_stiffness;
+double gravReflex_translational_stiffness;
+double gravReflex_rotational_stiffness;
+double gravReflex_nullspace_stiffness;
+double impReflex_translational_stiffness;
+double impReflex_rotational_stiffness;
+double impReflex_nullspace_stiffness;
+double cptc_translational_stiffness;
+double cptc_rotational_stiffness;
+double cptc_nullspace_stiffness;
+double cptc_vel;
+double cptc_vel_rotation;
+double cptc_tol_trans;
+double cptc_tol_rot;
 
     bool state;
     std::string name;
@@ -260,6 +286,32 @@ double nullspace_stiffness;
       double rotational_stiffness;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double nullspace_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double gravReflex_translational_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double gravReflex_rotational_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double gravReflex_nullspace_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double impReflex_translational_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double impReflex_rotational_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double impReflex_nullspace_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_translational_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_rotational_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_nullspace_stiffness;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_vel;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_vel_rotation;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_tol_trans;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      double cptc_tol_rot;
 //#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
@@ -428,6 +480,136 @@ compliance_paramConfig::GroupDescription<compliance_paramConfig::DEFAULT, compli
       Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller (the desired configuration is the one at startup)", "", &compliance_paramConfig::nullspace_stiffness)));
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller (the desired configuration is the one at startup)", "", &compliance_paramConfig::nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.gravReflex_translational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.gravReflex_translational_stiffness = 400.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.gravReflex_translational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("gravReflex_translational_stiffness", "double", 0, "Cartesian translational stiffness", "", &compliance_paramConfig::gravReflex_translational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("gravReflex_translational_stiffness", "double", 0, "Cartesian translational stiffness", "", &compliance_paramConfig::gravReflex_translational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.gravReflex_rotational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.gravReflex_rotational_stiffness = 30.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.gravReflex_rotational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("gravReflex_rotational_stiffness", "double", 0, "Cartesian rotational stiffness", "", &compliance_paramConfig::gravReflex_rotational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("gravReflex_rotational_stiffness", "double", 0, "Cartesian rotational stiffness", "", &compliance_paramConfig::gravReflex_rotational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.gravReflex_nullspace_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.gravReflex_nullspace_stiffness = 100.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.gravReflex_nullspace_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("gravReflex_nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller", "", &compliance_paramConfig::gravReflex_nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("gravReflex_nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller", "", &compliance_paramConfig::gravReflex_nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.impReflex_translational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.impReflex_translational_stiffness = 400.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.impReflex_translational_stiffness = 200.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("impReflex_translational_stiffness", "double", 0, "Cartesian translational stiffness", "", &compliance_paramConfig::impReflex_translational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("impReflex_translational_stiffness", "double", 0, "Cartesian translational stiffness", "", &compliance_paramConfig::impReflex_translational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.impReflex_rotational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.impReflex_rotational_stiffness = 30.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.impReflex_rotational_stiffness = 10.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("impReflex_rotational_stiffness", "double", 0, "Cartesian rotational stiffness", "", &compliance_paramConfig::impReflex_rotational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("impReflex_rotational_stiffness", "double", 0, "Cartesian rotational stiffness", "", &compliance_paramConfig::impReflex_rotational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.impReflex_nullspace_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.impReflex_nullspace_stiffness = 100.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.impReflex_nullspace_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("impReflex_nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller", "", &compliance_paramConfig::impReflex_nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("impReflex_nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller", "", &compliance_paramConfig::impReflex_nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_translational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_translational_stiffness = 400.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_translational_stiffness = 200.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_translational_stiffness", "double", 0, "Cartesian translational stiffness", "", &compliance_paramConfig::cptc_translational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_translational_stiffness", "double", 0, "Cartesian translational stiffness", "", &compliance_paramConfig::cptc_translational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_rotational_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_rotational_stiffness = 30.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_rotational_stiffness = 10.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_rotational_stiffness", "double", 0, "Cartesian rotational stiffness", "", &compliance_paramConfig::cptc_rotational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_rotational_stiffness", "double", 0, "Cartesian rotational stiffness", "", &compliance_paramConfig::cptc_rotational_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_nullspace_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_nullspace_stiffness = 100.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_nullspace_stiffness = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller", "", &compliance_paramConfig::cptc_nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_nullspace_stiffness", "double", 0, "Stiffness of the joint space nullspace controller", "", &compliance_paramConfig::cptc_nullspace_stiffness)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_vel = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_vel = 10.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_vel = 0.3;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_vel", "double", 0, "Cartesian velocity ", "", &compliance_paramConfig::cptc_vel)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_vel", "double", 0, "Cartesian velocity ", "", &compliance_paramConfig::cptc_vel)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_vel_rotation = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_vel_rotation = 30.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_vel_rotation = 0.5;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_vel_rotation", "double", 0, "Cartesian rotation velocity", "", &compliance_paramConfig::cptc_vel_rotation)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_vel_rotation", "double", 0, "Cartesian rotation velocity", "", &compliance_paramConfig::cptc_vel_rotation)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_tol_trans = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_tol_trans = 100.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_tol_trans = 0.05;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_trans", "double", 0, "Pose tolerance", "", &compliance_paramConfig::cptc_tol_trans)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_trans", "double", 0, "Pose tolerance", "", &compliance_paramConfig::cptc_tol_trans)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __min__.cptc_tol_rot = 0.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __max__.cptc_tol_rot = 100.0;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __default__.cptc_tol_rot = 0.05;
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_rot", "double", 0, "Angle tolerance", "", &compliance_paramConfig::cptc_tol_rot)));
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_rot", "double", 0, "Angle tolerance", "", &compliance_paramConfig::cptc_tol_rot)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"

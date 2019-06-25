@@ -11,7 +11,7 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
-let geometry_msgs = _finder('geometry_msgs');
+let cartesian_waypoint = require('./cartesian_waypoint.js');
 
 //-----------------------------------------------------------
 
@@ -20,8 +20,6 @@ class FollowWaypointsGoal {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.waypoints = null;
-      this.velocities = null;
-      this.segment_durations = null;
     }
     else {
       if (initObj.hasOwnProperty('waypoints')) {
@@ -29,18 +27,6 @@ class FollowWaypointsGoal {
       }
       else {
         this.waypoints = [];
-      }
-      if (initObj.hasOwnProperty('velocities')) {
-        this.velocities = initObj.velocities
-      }
-      else {
-        this.velocities = [];
-      }
-      if (initObj.hasOwnProperty('segment_durations')) {
-        this.segment_durations = initObj.segment_durations
-      }
-      else {
-        this.segment_durations = [];
       }
     }
   }
@@ -51,12 +37,8 @@ class FollowWaypointsGoal {
     // Serialize the length for message field [waypoints]
     bufferOffset = _serializer.uint32(obj.waypoints.length, buffer, bufferOffset);
     obj.waypoints.forEach((val) => {
-      bufferOffset = geometry_msgs.msg.Pose.serialize(val, buffer, bufferOffset);
+      bufferOffset = cartesian_waypoint.serialize(val, buffer, bufferOffset);
     });
-    // Serialize message field [velocities]
-    bufferOffset = _arraySerializer.float64(obj.velocities, buffer, bufferOffset, null);
-    // Serialize message field [segment_durations]
-    bufferOffset = _arraySerializer.duration(obj.segment_durations, buffer, bufferOffset, null);
     return bufferOffset;
   }
 
@@ -69,21 +51,15 @@ class FollowWaypointsGoal {
     len = _deserializer.uint32(buffer, bufferOffset);
     data.waypoints = new Array(len);
     for (let i = 0; i < len; ++i) {
-      data.waypoints[i] = geometry_msgs.msg.Pose.deserialize(buffer, bufferOffset)
+      data.waypoints[i] = cartesian_waypoint.deserialize(buffer, bufferOffset)
     }
-    // Deserialize message field [velocities]
-    data.velocities = _arrayDeserializer.float64(buffer, bufferOffset, null)
-    // Deserialize message field [segment_durations]
-    data.segment_durations = _arrayDeserializer.duration(buffer, bufferOffset, null)
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
-    length += 56 * object.waypoints.length;
-    length += 8 * object.velocities.length;
-    length += 8 * object.segment_durations.length;
-    return length + 12;
+    length += 88 * object.waypoints.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -93,7 +69,7 @@ class FollowWaypointsGoal {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'f9dd1ecaca467369f5088c9834a86ece';
+    return '07520baf25a4c29745adfadd9061229a';
   }
 
   static messageDefinition() {
@@ -103,10 +79,16 @@ class FollowWaypointsGoal {
     #goal definition
     #either one velocity/time_stamps or same as waypoints
     
-    geometry_msgs/Pose[] waypoints
-    float64[] velocities
-    duration[] segment_durations
+    cartesian_waypoint[] waypoints
     
+    
+    ================================================================================
+    MSG: reflex_control/cartesian_waypoint
+    geometry_msgs/Pose wp
+    float64 vel
+    duration dur
+    float64 tol_trans
+    float64 tol_angle
     
     ================================================================================
     MSG: geometry_msgs/Pose
@@ -142,25 +124,11 @@ class FollowWaypointsGoal {
     if (msg.waypoints !== undefined) {
       resolved.waypoints = new Array(msg.waypoints.length);
       for (let i = 0; i < resolved.waypoints.length; ++i) {
-        resolved.waypoints[i] = geometry_msgs.msg.Pose.Resolve(msg.waypoints[i]);
+        resolved.waypoints[i] = cartesian_waypoint.Resolve(msg.waypoints[i]);
       }
     }
     else {
       resolved.waypoints = []
-    }
-
-    if (msg.velocities !== undefined) {
-      resolved.velocities = msg.velocities;
-    }
-    else {
-      resolved.velocities = []
-    }
-
-    if (msg.segment_durations !== undefined) {
-      resolved.segment_durations = msg.segment_durations;
-    }
-    else {
-      resolved.segment_durations = []
     }
 
     return resolved;

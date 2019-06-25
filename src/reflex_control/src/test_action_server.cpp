@@ -19,6 +19,7 @@
 #include <actionlib/server/action_server.h>
 
 #include <reflex_control/FollowWaypointsAction.h>
+#include <reflex_control/cartesian_waypoint.h>
 #include <geometry_msgs/Pose.h>
 
 class TestActionServer
@@ -39,12 +40,19 @@ protected:
 	// reflex_control::FollowWaypointsResult result_;
 	RealtimeGoalHandlePtr active_goal_;
 
-	Eigen::Vector3d next_waypoint_position;
-	Eigen::Quaterniond next_waypoint_orientation;
-	ros::Duration next_segment_duration;
-	double next_segment_velocity;
-	uint64_t segment_id;
+	Eigen::Vector3d cptc_position_desired;
+	Eigen::Quaterniond cptc_orientation_desired; 
+	Eigen::Vector3d cptc_position_waypoint;
+	Eigen::Quaterniond cptc_orientation_waypoint; 
+	Eigen::Vector3d cptc_position_next;
+	Eigen::Quaterniond cptc_orientation_next; 
+	double vel;
+	double tol_trans;
+	double tol_rot;
+	ros::Duration dur;
+	uint64_t index;
 
+	bool okay;
 	
 public:
 	TestActionServer(void){};
@@ -71,36 +79,17 @@ public:
 		// 	return;
 		// }
 
-		if (gh.getGoal()->waypoints.empty() ||
-			(gh.getGoal()->velocities.empty() &&
-			gh.getGoal()->segment_durations.empty())) 
+		if (gh.getGoal()->waypoints.empty())
 		{
-			ROS_INFO("Empty goal or velocity and segment_durations.");
+			ROS_INFO("Empty goal.");
 			reflex_control::FollowWaypointsResult result;
 			result.error_code = reflex_control::FollowWaypointsResult::INVALID_GOAL;
 			gh.setRejected(result);
 			return;
 		}
-		if ((gh.getGoal()->velocities.size() >= 1 && 
-			gh.getGoal()->segment_durations.size() >= 1))
-			// (gh.getGoal()->velocities.size() != 1 &&
-			// 	gh.getGoal()->velocities.size() != gh.getGoal()->waypoints.size()) ^
-			// (gh.getGoal()->segment_durations.size() != 1 &&
-			// 	gh.getGoal()->segment_durations.size() != gh.getGoal()->waypoints.size())
-			// )
-		{
-			ROS_INFO("Either velocities or durations can be given. Either one of it or as many as waypoints.");
-			reflex_control::FollowWaypointsResult result;
-			result.error_code = reflex_control::FollowWaypointsResult::INVALID_GOAL;
-			gh.setRejected(result);
-			return;
-		}
-
-
-
 
 		RealtimeGoalHandlePtr rt_goal(new RealtimeGoalHandle(gh));
-		const bool waypoint_ok = setNextWaypoint(rt_goal, 0);
+		// const bool waypoint_ok = setNextWaypoint(rt_goal, 0);
 
 		if(true) {
 			// Accept new goal
@@ -111,6 +100,11 @@ public:
 		} else {
 			gh.setRejected();
 		}
+
+		index = 0;
+		okay = true;
+
+		runLoop();
 		
 	}
 	void cancelCB(GoalHandle gh)
@@ -144,11 +138,47 @@ public:
 	bool setNextWaypoint(RealtimeGoalHandlePtr ghPtr, uint64_t index)
 	{
 		ROS_INFO("Next Waypoint check and set");
-		geometry_msgs::Pose wp_ = ghPtr->gh_.getGoal()->waypoints[index];
+		// geometry_msgs::Pose wp_ = ghPtr->gh_.getGoal()->waypoints[index];
 		
 		// next_waypoint_position << wp_->position.x, wp_->position.y, wp_->position.z;
 
 		return true;
+	}
+
+
+
+	bool getWaypoint(int index) {
+		RealtimeGoalHandlePtr current_active_goal(active_goal_);
+		if(current_active_goal) {	
+			if (current_active_goal->gh_.getGoal()->waypoints.size() <= index) {
+				ROS_INFO("Reached end of waypoints list.");
+				preemptActiveGoal();
+				okay = false;
+				return false;
+			}
+
+			reflex_control::cartesian_waypoint wp_msg;
+			wp_msg = current_active_goal->gh_.getGoal()->waypoints[index];
+			cptc_position_waypoint << wp_msg.wp.position.x, wp_msg.wp.position.y, wp_msg.wp.position.z;
+			cptc_orientation_waypoint.coeffs() << wp_msg.wp.orientation.x, wp_msg.wp.orientation.y, wp_msg.wp.orientation.z, wp_msg.wp.orientation.w;
+			ROS_INFO("next waypoint = (%f, %f, %f)", cptc_position_waypoint[0], cptc_position_waypoint[1], cptc_position_waypoint[2]);
+
+		} else {
+			ROS_INFO("No active goal, stop trajectory controller");
+			okay = false;
+			return false;
+		}
+
+	}
+
+	void runLoop() {
+		RealtimeGoalHandlePtr current_active_goal(active_goal_);
+		while (okay) {
+			ROS_INFO("bla");
+			getWaypoint(index);
+			index++;
+		}
+		ROS_INFO("end");
 	}
 };
 
@@ -160,5 +190,6 @@ int main(int argc, char** argv)
 	test_as.init_();
 
 	ros::spin();
+
 	return 0;
 }

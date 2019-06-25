@@ -4,6 +4,19 @@
   <param name="translational_stiffness" type="double" value="200.0" />
   <param name="rotational_stiffness" type="double" value="10.0" />
   <param name="nullspace_stiffness" type="double" value="0.0" />
+  <param name="gravReflex_translational_stiffness" type="double" value="0.0" />
+  <param name="gravReflex_rotational_stiffness" type="double" value="0.0" />
+  <param name="gravReflex_nullspace_stiffness" type="double" value="0.0" />
+  <param name="impReflex_translational_stiffness" type="double" value="200.0" />
+  <param name="impReflex_rotational_stiffness" type="double" value="10.0" />
+  <param name="impReflex_nullspace_stiffness" type="double" value="0.0" />
+  <param name="cptc_translational_stiffness" type="double" value="200.0" />
+  <param name="cptc_rotational_stiffness" type="double" value="10.0" />
+  <param name="cptc_nullspace_stiffness" type="double" value="0.0" />
+  <param name="cptc_vel" type="double" value="0.3" />
+  <param name="cptc_vel_rotation" type="double" value="0.5" />
+  <param name="cptc_tol_trans" type="double" value="0.05" />
+  <param name="cptc_tol_rot" type="double" value="0.05" />
 </node>
 \endverbatim
 

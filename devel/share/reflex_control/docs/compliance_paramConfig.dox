@@ -5,4 +5,17 @@ Reads and maintains the following parameters on the ROS server
 - \b "~translational_stiffness" : \b [double] Cartesian translational stiffness min: 0.0, default: 200.0, max: 400.0
 - \b "~rotational_stiffness" : \b [double] Cartesian rotational stiffness min: 0.0, default: 10.0, max: 30.0
 - \b "~nullspace_stiffness" : \b [double] Stiffness of the joint space nullspace controller (the desired configuration is the one at startup) min: 0.0, default: 0.0, max: 100.0
+- \b "~gravReflex_translational_stiffness" : \b [double] Cartesian translational stiffness min: 0.0, default: 0.0, max: 400.0
+- \b "~gravReflex_rotational_stiffness" : \b [double] Cartesian rotational stiffness min: 0.0, default: 0.0, max: 30.0
+- \b "~gravReflex_nullspace_stiffness" : \b [double] Stiffness of the joint space nullspace controller min: 0.0, default: 0.0, max: 100.0
+- \b "~impReflex_translational_stiffness" : \b [double] Cartesian translational stiffness min: 0.0, default: 200.0, max: 400.0
+- \b "~impReflex_rotational_stiffness" : \b [double] Cartesian rotational stiffness min: 0.0, default: 10.0, max: 30.0
+- \b "~impReflex_nullspace_stiffness" : \b [double] Stiffness of the joint space nullspace controller min: 0.0, default: 0.0, max: 100.0
+- \b "~cptc_translational_stiffness" : \b [double] Cartesian translational stiffness min: 0.0, default: 200.0, max: 400.0
+- \b "~cptc_rotational_stiffness" : \b [double] Cartesian rotational stiffness min: 0.0, default: 10.0, max: 30.0
+- \b "~cptc_nullspace_stiffness" : \b [double] Stiffness of the joint space nullspace controller min: 0.0, default: 0.0, max: 100.0
+- \b "~cptc_vel" : \b [double] Cartesian velocity  min: 0.0, default: 0.3, max: 10.0
+- \b "~cptc_vel_rotation" : \b [double] Cartesian rotation velocity min: 0.0, default: 0.5, max: 30.0
+- \b "~cptc_tol_trans" : \b [double] Pose tolerance min: 0.0, default: 0.05, max: 100.0
+- \b "~cptc_tol_rot" : \b [double] Angle tolerance min: 0.0, default: 0.05, max: 100.0
 

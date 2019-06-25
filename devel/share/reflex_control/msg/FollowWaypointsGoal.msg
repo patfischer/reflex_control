@@ -2,7 +2,5 @@
 #goal definition
 #either one velocity/time_stamps or same as waypoints
 
-geometry_msgs/Pose[] waypoints
-float64[] velocities
-duration[] segment_durations
+cartesian_waypoint[] waypoints
 

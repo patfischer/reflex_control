@@ -15,7 +15,7 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
-#include <geometry_msgs/Pose.h>
+#include <reflex_control/cartesian_waypoint.h>
 
 namespace reflex_control
 {
@@ -25,27 +25,17 @@ struct FollowWaypointsGoal_
   typedef FollowWaypointsGoal_<ContainerAllocator> Type;
 
   FollowWaypointsGoal_()
-    : waypoints()
-    , velocities()
-    , segment_durations()  {
+    : waypoints()  {
     }
   FollowWaypointsGoal_(const ContainerAllocator& _alloc)
-    : waypoints(_alloc)
-    , velocities(_alloc)
-    , segment_durations(_alloc)  {
+    : waypoints(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef std::vector< ::geometry_msgs::Pose_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::geometry_msgs::Pose_<ContainerAllocator> >::other >  _waypoints_type;
+   typedef std::vector< ::reflex_control::cartesian_waypoint_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::reflex_control::cartesian_waypoint_<ContainerAllocator> >::other >  _waypoints_type;
   _waypoints_type waypoints;
-
-   typedef std::vector<double, typename ContainerAllocator::template rebind<double>::other >  _velocities_type;
-  _velocities_type velocities;
-
-   typedef std::vector<ros::Duration, typename ContainerAllocator::template rebind<ros::Duration>::other >  _segment_durations_type;
-  _segment_durations_type segment_durations;
 
 
 
@@ -82,7 +72,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'reflex_control': ['/home/fischer/reflex_control/src/reflex_control/msg', '/home/fischer/reflex_control/devel/share/reflex_control/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'actionlib': ['/opt/ros/kinetic/share/actionlib/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg']}
+// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'reflex_control': ['/home/patrick/reflex_control/src/reflex_control/msg', '/home/patrick/reflex_control/devel/share/reflex_control/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'actionlib': ['/opt/ros/kinetic/share/actionlib/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -125,12 +115,12 @@ struct MD5Sum< ::reflex_control::FollowWaypointsGoal_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "f9dd1ecaca467369f5088c9834a86ece";
+    return "07520baf25a4c29745adfadd9061229a";
   }
 
   static const char* value(const ::reflex_control::FollowWaypointsGoal_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xf9dd1ecaca467369ULL;
-  static const uint64_t static_value2 = 0xf5088c9834a86eceULL;
+  static const uint64_t static_value1 = 0x07520baf25a4c297ULL;
+  static const uint64_t static_value2 = 0x45adfadd9061229aULL;
 };
 
 template<class ContainerAllocator>
@@ -153,10 +143,16 @@ struct Definition< ::reflex_control::FollowWaypointsGoal_<ContainerAllocator> >
 #goal definition\n\
 #either one velocity/time_stamps or same as waypoints\n\
 \n\
-geometry_msgs/Pose[] waypoints\n\
-float64[] velocities\n\
-duration[] segment_durations\n\
+cartesian_waypoint[] waypoints\n\
 \n\
+\n\
+================================================================================\n\
+MSG: reflex_control/cartesian_waypoint\n\
+geometry_msgs/Pose wp\n\
+float64 vel\n\
+duration dur\n\
+float64 tol_trans\n\
+float64 tol_angle\n\
 \n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose\n\
@@ -198,8 +194,6 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.waypoints);
-      stream.next(m.velocities);
-      stream.next(m.segment_durations);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -224,19 +218,7 @@ struct Printer< ::reflex_control::FollowWaypointsGoal_<ContainerAllocator> >
       s << indent << "  waypoints[" << i << "]: ";
       s << std::endl;
       s << indent;
-      Printer< ::geometry_msgs::Pose_<ContainerAllocator> >::stream(s, indent + "    ", v.waypoints[i]);
-    }
-    s << indent << "velocities[]" << std::endl;
-    for (size_t i = 0; i < v.velocities.size(); ++i)
-    {
-      s << indent << "  velocities[" << i << "]: ";
-      Printer<double>::stream(s, indent + "  ", v.velocities[i]);
-    }
-    s << indent << "segment_durations[]" << std::endl;
-    for (size_t i = 0; i < v.segment_durations.size(); ++i)
-    {
-      s << indent << "  segment_durations[" << i << "]: ";
-      Printer<ros::Duration>::stream(s, indent + "  ", v.segment_durations[i]);
+      Printer< ::reflex_control::cartesian_waypoint_<ContainerAllocator> >::stream(s, indent + "    ", v.waypoints[i]);
     }
   }
 };

@@ -84,7 +84,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'reflex_control': ['/home/fischer/reflex_control/src/reflex_control/msg', '/home/fischer/reflex_control/devel/share/reflex_control/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'actionlib': ['/opt/ros/kinetic/share/actionlib/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg']}
+// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'reflex_control': ['/home/patrick/reflex_control/src/reflex_control/msg', '/home/patrick/reflex_control/devel/share/reflex_control/msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'actionlib': ['/opt/ros/kinetic/share/actionlib/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -127,12 +127,12 @@ struct MD5Sum< ::reflex_control::FollowWaypointsAction_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "4366dd9f281e44a1bbb4fdcdce4ece11";
+    return "7cebd5ee9a899c5c4f548d1acdb7fd88";
   }
 
   static const char* value(const ::reflex_control::FollowWaypointsAction_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x4366dd9f281e44a1ULL;
-  static const uint64_t static_value2 = 0xbbb4fdcdce4ece11ULL;
+  static const uint64_t static_value1 = 0x7cebd5ee9a899c5cULL;
+  static const uint64_t static_value2 = 0x4f548d1acdb7fd88ULL;
 };
 
 template<class ContainerAllocator>
@@ -202,10 +202,16 @@ MSG: reflex_control/FollowWaypointsGoal\n\
 #goal definition\n\
 #either one velocity/time_stamps or same as waypoints\n\
 \n\
-geometry_msgs/Pose[] waypoints\n\
-float64[] velocities\n\
-duration[] segment_durations\n\
+cartesian_waypoint[] waypoints\n\
 \n\
+\n\
+================================================================================\n\
+MSG: reflex_control/cartesian_waypoint\n\
+geometry_msgs/Pose wp\n\
+float64 vel\n\
+duration dur\n\
+float64 tol_trans\n\
+float64 tol_angle\n\
 \n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose\n\
