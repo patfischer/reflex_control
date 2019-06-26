@@ -20,11 +20,11 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   //~ sub_equilibrium_pose_ = node_handle.subscribe(
       //~ "/equilibrium_pose", 20, &CartesianImpedanceController::equilibriumPoseCallback, this,
       //~ ros::TransportHints().reliable().tcpNoDelay());
-  
+
   name_ = "Reflex Controller";
 
-  nh_ = node_handle;
-  
+  // nh_ = node_handle;
+
   // advertise switchControllerMode service
   controller_switch_service = node_handle.advertiseService(
     "switchController", &CartesianImpedanceController::switchControllerModeCB, this);
@@ -108,7 +108,10 @@ bool CartesianImpedanceController::init(hardware_interface::RobotHW* robot_hw,
   cartesian_stiffness_.setZero();
   cartesian_damping_.setZero();
 
+  cptc_init();
   impReflex_init();
+  gravReflex_init();
+  testMove_init();
 
   return true;
 }
@@ -137,24 +140,33 @@ void CartesianImpedanceController::starting(const ros::Time& /*time*/) {
 
   // initial control mode
   impReflex_start();
-  control_mode = 1;
+  control_mode = 3;
 }
 
 void CartesianImpedanceController::update(const ros::Time& time,
                                                  const ros::Duration& period) {
   //~ ROS_DEBUG_THROTTLE_NAMED(1, name_, "Update: period: %f", period.toSec());
   switch(control_mode) {
-  case 1:
-    impReflex_update(time, period);
-    break;
-  case 2:
-	testMove_update(time, period);
-	break;
-  default:
-    impReflex_start();
-    impReflex_update(time, period);
+    case 1:
+      cptc_update(time, period);
+      break;
+    case 3:
+      impReflex_update(time, period);
+      break;
+    case 4:
+      gravReflex_update(time, period);
+      break;
+    case 6:
+    	testMove_update(time, period);
+    	break;
+    default:
+      impReflex_start();
+      impReflex_update(time, period);
     break;
   }
+
+  // ROS_INFO_THROTTLE_NAMED(1, name_, "cptc_cartesian_stiffness = %f", cptc_cartesian_stiffness(0,0));
+  // ROS_INFO_THROTTLE_NAMED(1, name_, "cartesian_stiffness = %f", cartesian_stiffness_(0,0));
 
   // update parameters changed online through dynamic reconfigure by filtering
   updateParams();
@@ -194,6 +206,12 @@ void CartesianImpedanceController::updateParams() {
   gravReflex_nullspace_stiffness =
       filter_params_ * gravReflex_nullspace_stiffness_target + (1.0 - filter_params_) * gravReflex_nullspace_stiffness;
 
+  cptc_cartesian_stiffness =
+      filter_params_ * cptc_cartesian_stiffness_target + (1.0 - filter_params_) * cptc_cartesian_stiffness;
+  cptc_cartesian_damping =
+      filter_params_ * cptc_cartesian_damping_target + (1.0 - filter_params_) * cptc_cartesian_damping;
+  cptc_nullspace_stiffness =
+      filter_params_ * cptc_nullspace_stiffness_target + (1.0 - filter_params_) * cptc_nullspace_stiffness;
 }
 
 Eigen::Matrix<double, 7, 1> CartesianImpedanceController::saturateTorqueRate(
@@ -294,14 +312,27 @@ bool CartesianImpedanceController::switchControllerModeCB(reflex_control::switch
   }
   switch(req.mode) {
     case 1:
-      ROS_INFO("Initial Controller");
-      impReflex_start();
+      ROS_INFO("Cartesian pose trajectory control");
+      cptc_start();
       control_mode = req.mode;
       res.ok = true;
       break;
 
-    case 2:
-      ROS_INFO("Reflex 1");
+    case 3:
+      ROS_INFO("Impedance reflex");
+      impReflex_start();
+      control_mode = req.mode;
+      res.ok = true;
+      break;
+    case 4:
+      ROS_INFO("0 gravity reflex");
+      gravReflex_start();
+      control_mode = req.mode;
+      res.ok = true;
+      break;
+
+    case 6:
+      ROS_INFO("Test movement");
       // @ToDo: fill initialisation of parameters
       testMove_start();
       control_mode = req.mode;
@@ -328,8 +359,8 @@ void CartesianImpedanceController::cptc_init() {
 
   cptc_cartesian_stiffness.setZero();
   cptc_cartesian_damping.setZero();
-
-  as_.reset(new ActionServer(nh_, "follow_waypoints",
+  // nh = ros::NodeHandle("actionServer_node");
+  as_.reset(new ActionServer(nh, "follow_waypoints",
     boost::bind(&CartesianImpedanceController::cptc_goalCB, this, _1),
     boost::bind(&CartesianImpedanceController::cptc_cancelCB, this, _1),
     false));
@@ -376,15 +407,20 @@ void CartesianImpedanceController::cptc_update(const ros::Time& time, const ros:
   Eigen::Vector3d err_pd;
   err_trans << position - cptc_position_desired;
   // error.head(3) << position - cptc_position_desired;
+  // ROS_INFO_THROTTLE_NAMED(0.1, name_, "err_trans = %f, %f, %f", err_trans[0], err_trans[1], err_trans[2]);
 
   // max velocity
   double err_norm = err_trans.norm();
-  if (err_norm > cptc_vel * period.toSec()) {
-    err_pd = err_trans.normalized() * cptc_vel * period.toSec();
-  }
+  // if (err_norm > cptc_vel) {
+  //   err_trans = err_trans.normalized() * cptc_vel;
+  // }
   // todo max acceleration
 
-  error.head(3) << err_pd;
+  error.head(3) << err_trans;
+  ROS_INFO_THROTTLE_NAMED(0.3, name_, "err_norm = %f", err_norm);
+  ROS_INFO_THROTTLE_NAMED(0.3, name_, "pose = %f, %f, %f", position(0), position(1), position(2));
+  ROS_INFO_THROTTLE_NAMED(0.3, name_, "orie = %f, %f, %f, %f",  orientation.coeffs()[0], orientation.coeffs()[1], orientation.coeffs()[2], orientation.coeffs()[3]);
+  // ROS_INFO_THROTTLE_NAMED(0.1, name_, "err_pd = %f, %f, %f", error[0], error[1], error[2]);
 
   // orientation error
   if (cptc_orientation_desired.coeffs().dot(orientation.coeffs()) < 0.0) {
@@ -396,10 +432,9 @@ void CartesianImpedanceController::cptc_update(const ros::Time& time, const ros:
   Eigen::AngleAxisd error_quaternion_angle_axis(error_quaternion);
   // max rotation speed
   double err_angle = error_quaternion_angle_axis.angle();
-  if (error_quaternion_angle_axis.angle() > cptc_vel_rotation) {
-    error_quaternion_angle_axis.angle() = cptc_vel_rotation;
-  }
-
+  // if (error_quaternion_angle_axis.angle() > cptc_vel_rotation) {
+  //   error_quaternion_angle_axis.angle() = cptc_vel_rotation;
+  // }
   // compute "orientation error"
   error.tail(3) << error_quaternion_angle_axis.axis() * error_quaternion_angle_axis.angle();
 
@@ -421,6 +456,8 @@ void CartesianImpedanceController::cptc_update(const ros::Time& time, const ros:
   // Cartesian PD control with damping ratio = 1
   tau_task << jacobian.transpose() *
                   (-cptc_cartesian_stiffness * error - cptc_cartesian_damping * (jacobian * dq));
+
+  // ROS_INFO_THROTTLE_NAMED(0.3, name_, "tau_task = %f, %f, %f", tau_task(0), tau_task(1), tau_task(2));
   // nullspace PD control with damping ratio = 1
   tau_nullspace << (Eigen::MatrixXd::Identity(7, 7) -
                     jacobian.transpose() * jacobian_transpose_pinv) *
@@ -436,6 +473,7 @@ void CartesianImpedanceController::cptc_update(const ros::Time& time, const ros:
 }
 
 void CartesianImpedanceController::cptc_goalCB(GoalHandle gh) {
+  ROS_INFO("New goal.");
   if (!this->isRunning())
   {
    ROS_INFO("Controller not running. Can't accept new goal.");
@@ -496,13 +534,13 @@ void CartesianImpedanceController::cptc_preemptActiveGoal() {
     current_active_goal->gh_.setCanceled();
     ROS_INFO("Preempted active goal.");
   } else {
-    ROS_INFO("No active goal to cancel.");      
+    ROS_INFO("No active goal to cancel.");
   }
 }
 
 void CartesianImpedanceController::cptc_getNextWaypoint() {
   RealtimeGoalHandlePtr current_active_goal(active_goal_);
-  if(current_active_goal) { 
+  if(current_active_goal) {
     if (current_active_goal->gh_.getGoal()->waypoints.size() <= index) {
       ROS_INFO("Reached end of waypoints list.");
       cptc_preemptActiveGoal();
@@ -516,7 +554,7 @@ void CartesianImpedanceController::cptc_getNextWaypoint() {
     cptc_vel = wp_msg.vel;
 
   } else {
-    ROS_INFO("No active goal, stop trajectory controller");
+    ROS_INFO_ONCE("No active goal, stop trajectory controller");
   }
 }
 
@@ -542,7 +580,7 @@ void CartesianImpedanceController::impReflex_start() {
   impReflex_orientation_desired = Eigen::Quaterniond(initial_transform.linear());
 }
 
-void CartesianImpedanceController::impReflex_update(const ros::Time& time, 
+void CartesianImpedanceController::impReflex_update(const ros::Time& time,
                                                     const ros::Duration& period) {
   // get state variables
   franka::RobotState robot_state = state_handle_->getRobotState();
@@ -603,6 +641,89 @@ void CartesianImpedanceController::impReflex_update(const ros::Time& time,
   }
 }
 
+// 0 gravity reflex (stop at current position)
+void CartesianImpedanceController::gravReflex_init() {
+  // @ToDo: dynamic reconf callback for parameters?
+
+  gravReflex_position_desired.setZero();
+  gravReflex_orientation_desired.coeffs() << 0.0, 0.0, 0.0, 1.0;
+
+  gravReflex_cartesian_stiffness.setZero();
+  gravReflex_cartesian_damping.setZero();
+}
+
+void CartesianImpedanceController::gravReflex_start() {
+  // to initial configuration
+  franka::RobotState initial_state = state_handle_->getRobotState();
+  Eigen::Map<Eigen::Matrix<double, 7, 1>> q_initial(initial_state.q.data());
+  Eigen::Affine3d initial_transform(Eigen::Matrix4d::Map(initial_state.O_T_EE.data()));
+
+  // set position desired to current state
+  gravReflex_position_desired = initial_transform.translation();
+  gravReflex_orientation_desired = Eigen::Quaterniond(initial_transform.linear());
+}
+
+void CartesianImpedanceController::gravReflex_update(const ros::Time& time,
+                                                    const ros::Duration& period) {
+  // get state variables
+  franka::RobotState robot_state = state_handle_->getRobotState();
+  std::array<double, 7> coriolis_array = model_handle_->getCoriolis();
+  std::array<double, 42> jacobian_array =
+      model_handle_->getZeroJacobian(franka::Frame::kEndEffector);
+
+  // convert to Eigen
+  Eigen::Map<Eigen::Matrix<double, 7, 1>> coriolis(coriolis_array.data());
+  Eigen::Map<Eigen::Matrix<double, 6, 7>> jacobian(jacobian_array.data());
+  Eigen::Map<Eigen::Matrix<double, 7, 1>> q(robot_state.q.data());
+  Eigen::Map<Eigen::Matrix<double, 7, 1>> dq(robot_state.dq.data());
+  Eigen::Map<Eigen::Matrix<double, 7, 1>> tau_J_d(  // NOLINT (readability-identifier-naming)
+      robot_state.tau_J_d.data());
+  Eigen::Affine3d transform(Eigen::Matrix4d::Map(robot_state.O_T_EE.data()));
+  Eigen::Vector3d position(transform.translation());
+  Eigen::Quaterniond orientation(transform.linear());
+
+  // compute error to desired pose
+  // position error
+  Eigen::Matrix<double, 6, 1> error;
+  error.head(3) << position - gravReflex_position_desired;
+
+  // orientation error
+  if (gravReflex_orientation_desired.coeffs().dot(orientation.coeffs()) < 0.0) {
+    orientation.coeffs() << -orientation.coeffs();
+  }
+  // "difference" quaternion
+  Eigen::Quaterniond error_quaternion(orientation * gravReflex_orientation_desired.inverse());
+  // convert to axis angle
+  Eigen::AngleAxisd error_quaternion_angle_axis(error_quaternion);
+  // compute "orientation error"
+  error.tail(3) << error_quaternion_angle_axis.axis() * error_quaternion_angle_axis.angle();
+
+  // compute control
+  // allocate variables
+  Eigen::VectorXd tau_task(7), tau_nullspace(7), tau_d(7);
+
+  // pseudoinverse for nullspace handling
+  // kinematic pseuoinverse
+  Eigen::MatrixXd jacobian_transpose_pinv;
+  pseudoInverse(jacobian.transpose(), jacobian_transpose_pinv);
+
+  // Cartesian PD control with damping ratio = 1
+  tau_task << jacobian.transpose() *
+                  (-gravReflex_cartesian_stiffness * error - gravReflex_cartesian_damping * (jacobian * dq));
+  // nullspace PD control with damping ratio = 1
+  tau_nullspace << (Eigen::MatrixXd::Identity(7, 7) -
+                    jacobian.transpose() * jacobian_transpose_pinv) *
+                       (gravReflex_nullspace_stiffness * (q_d_nullspace_ - q) -
+                        (2.0 * sqrt(gravReflex_nullspace_stiffness)) * dq);
+  // Desired torque
+  tau_d << tau_task + tau_nullspace + coriolis;
+  // Saturate torque rate to avoid discontinuities
+  tau_d << saturateTorqueRate(tau_d, tau_J_d);
+  for (size_t i = 0; i < 7; ++i) {
+    joint_handles_[i].setCommand(tau_d(i));
+  }
+}
+
 
 // Test Movement (circle)
 void CartesianImpedanceController::testMove_init() {
@@ -620,14 +741,14 @@ void CartesianImpedanceController::testMove_start() {
   testMove_position_initial = initial_transform.translation();
   testMove_orientation_initial = Eigen::Quaterniond(initial_transform.linear());
   testMove_angle = 0;
-  ROS_DEBUG_NAMED(name_, "testMove_start: at pos: %4.2f | %4.2f | %4.2f", 
+  ROS_DEBUG_NAMED(name_, "testMove_start: at pos: %4.2f | %4.2f | %4.2f",
 	testMove_position_initial[0], testMove_position_initial[1], testMove_position_initial[2]);
 }
 
 void CartesianImpedanceController::testMove_update(const ros::Time& time, const ros::Duration& period) {
   // compute next position on circle
   //~ ROS_DEBUG_THROTTLE_NAMED(1, name_, "testMove_update: period: %f", period.toSec());
-  
+
   testMove_angle += period.toSec() * testMove_vel / std::fabs(testMove_radius);
   if (testMove_angle > 2 * M_PI) {
     testMove_angle -= 2 * M_PI;

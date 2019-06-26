@@ -52,8 +52,8 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
  private:
   std::string name_; // Debugger name
 
-  ros::NodeHandle nh_;
-  	
+  ros::NodeHandle nh;
+
   // Saturation
   Eigen::Matrix<double, 7, 1> saturateTorqueRate(
       const Eigen::Matrix<double, 7, 1>& tau_d_calculated,
@@ -117,7 +117,7 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   double cptc_alpha{0.005};
   // Eigen::Matrix<double, 7, 1> q_d_nullspace_;
   Eigen::Vector3d cptc_position_desired;
-  Eigen::Quaterniond cptc_orientation_desired; 
+  Eigen::Quaterniond cptc_orientation_desired;
   double cptc_vel;
   double cptc_vel_rotation;
   double cptc_tol;
@@ -139,7 +139,7 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   Eigen::Matrix<double, 6, 6> impReflex_cartesian_damping;
   // Eigen::Matrix<double, 7, 1> q_d_nullspace_;
   Eigen::Vector3d impReflex_position_desired;
-  Eigen::Quaterniond impReflex_orientation_desired; 
+  Eigen::Quaterniond impReflex_orientation_desired;
   void impReflex_init();
   void impReflex_start();
   void impReflex_update(const ros::Time& time, const ros::Duration& period);
@@ -152,7 +152,7 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   Eigen::Matrix<double, 6, 6> gravReflex_cartesian_stiffness;
   Eigen::Matrix<double, 6, 6> gravReflex_cartesian_damping;
   Eigen::Vector3d gravReflex_position_desired;
-  Eigen::Quaterniond gravReflex_orientation_desired; 
+  Eigen::Quaterniond gravReflex_orientation_desired;
   void gravReflex_init();
   void gravReflex_start();
   void gravReflex_update(const ros::Time& time, const ros::Duration& period);
@@ -162,7 +162,7 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
 
   // test movement going in a circle
   Eigen::Vector3d testMove_position_initial;
-  Eigen::Quaterniond testMove_orientation_initial; 
+  Eigen::Quaterniond testMove_orientation_initial;
   double testMove_radius{0.25};
   double testMove_vel{0.5};
   double testMove_angle{0.0};
