@@ -223,6 +223,52 @@ void CartesianImpedanceController::complianceParamCallback(
   cartesian_damping_target_.bottomRightCorner(3, 3)
       << 2.0 * sqrt(config.rotational_stiffness) * Eigen::Matrix3d::Identity();
   nullspace_stiffness_target_ = config.nullspace_stiffness;
+
+  //impReflex
+  impReflex_cartesian_stiffness_target.setIdentity();
+  impReflex_cartesian_stiffness_target.topLeftCorner(3, 3)
+      << config.impReflex_translational_stiffness * Eigen::Matrix3d::Identity();
+  impReflex_cartesian_stiffness_target.bottomRightCorner(3, 3)
+      << config.impReflex_rotational_stiffness * Eigen::Matrix3d::Identity();
+  impReflex_cartesian_damping_target.setIdentity();
+  // Damping ratio = 1
+  impReflex_cartesian_damping_target.topLeftCorner(3, 3)
+      << 2.0 * sqrt(config.impReflex_translational_stiffness) * Eigen::Matrix3d::Identity();
+  impReflex_cartesian_damping_target.bottomRightCorner(3, 3)
+      << 2.0 * sqrt(config.impReflex_rotational_stiffness) * Eigen::Matrix3d::Identity();
+  impReflex_nullspace_stiffness_target = config.nullspace_stiffness;
+
+    //gravReflex
+  gravReflex_cartesian_stiffness_target.setIdentity();
+  gravReflex_cartesian_stiffness_target.topLeftCorner(3, 3)
+      << config.gravReflex_translational_stiffness * Eigen::Matrix3d::Identity();
+  gravReflex_cartesian_stiffness_target.bottomRightCorner(3, 3)
+      << config.gravReflex_rotational_stiffness * Eigen::Matrix3d::Identity();
+  gravReflex_cartesian_damping_target.setIdentity();
+  // Damping ratio = 1
+  gravReflex_cartesian_damping_target.topLeftCorner(3, 3)
+      << 2.0 * sqrt(config.gravReflex_translational_stiffness) * Eigen::Matrix3d::Identity();
+  gravReflex_cartesian_damping_target.bottomRightCorner(3, 3)
+      << 2.0 * sqrt(config.gravReflex_rotational_stiffness) * Eigen::Matrix3d::Identity();
+  gravReflex_nullspace_stiffness_target = config.nullspace_stiffness;
+
+    //impReflex
+  cptc_cartesian_stiffness_target.setIdentity();
+  cptc_cartesian_stiffness_target.topLeftCorner(3, 3)
+      << config.cptc_translational_stiffness * Eigen::Matrix3d::Identity();
+  cptc_cartesian_stiffness_target.bottomRightCorner(3, 3)
+      << config.cptc_rotational_stiffness * Eigen::Matrix3d::Identity();
+  cptc_cartesian_damping_target.setIdentity();
+  // Damping ratio = 1
+  cptc_cartesian_damping_target.topLeftCorner(3, 3)
+      << 2.0 * sqrt(config.cptc_translational_stiffness) * Eigen::Matrix3d::Identity();
+  cptc_cartesian_damping_target.bottomRightCorner(3, 3)
+      << 2.0 * sqrt(config.cptc_rotational_stiffness) * Eigen::Matrix3d::Identity();
+  cptc_nullspace_stiffness_target = config.nullspace_stiffness;
+  cptc_vel = config.cptc_vel;
+  cptc_vel_rotation = config.cptc_vel_rotation;
+  cptc_tol_trans = config.cptc_tol_trans;
+  cptc_tol_angle = config.cptc_tol_angle;
 }
 
 //~ void CartesianImpedanceController::equilibriumPoseCallback(
@@ -411,10 +457,20 @@ void CartesianImpedanceController::cptc_goalCB(GoalHandle gh) {
   RealtimeGoalHandlePtr rt_goal(new RealtimeGoalHandle(gh));
 
   // TODO check if waypoint out of reach
-
   cptc_preemptActiveGoal();
+
+  // to initial configuration
+  franka::RobotState initial_state = state_handle_->getRobotState();
+  Eigen::Map<Eigen::Matrix<double, 7, 1>> q_initial(initial_state.q.data());
+  Eigen::Affine3d initial_transform(Eigen::Matrix4d::Map(initial_state.O_T_EE.data()));
+  // set position desired to current state
+  cptc_position_desired = initial_transform.translation();
+  cptc_orientation_desired = Eigen::Quaterniond(initial_transform.linear());
+
   active_goal_ = rt_goal;
   index = 0;
+  cptc_getNextWaypoint();
+  index++;
   ROS_INFO("New goal accepted.");
 
 }
@@ -439,7 +495,6 @@ void CartesianImpedanceController::cptc_preemptActiveGoal() {
     active_goal_.reset();
     current_active_goal->gh_.setCanceled();
     ROS_INFO("Preempted active goal.");
-
   } else {
     ROS_INFO("No active goal to cancel.");      
   }

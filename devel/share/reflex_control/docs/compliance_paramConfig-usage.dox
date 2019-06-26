@@ -16,7 +16,7 @@
   <param name="cptc_vel" type="double" value="0.3" />
   <param name="cptc_vel_rotation" type="double" value="0.5" />
   <param name="cptc_tol_trans" type="double" value="0.05" />
-  <param name="cptc_tol_rot" type="double" value="0.05" />
+  <param name="cptc_tol_angle" type="double" value="0.05" />
 </node>
 \endverbatim
 

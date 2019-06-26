@@ -111,6 +111,10 @@ class CartesianImpedanceController : public controller_interface::MultiInterface
   double cptc_nullspace_stiffness{20.0};
   Eigen::Matrix<double, 6, 6> cptc_cartesian_stiffness;
   Eigen::Matrix<double, 6, 6> cptc_cartesian_damping;
+  double cptc_nullspace_stiffness_target{20.0};
+  Eigen::Matrix<double, 6, 6> cptc_cartesian_stiffness_target;
+  Eigen::Matrix<double, 6, 6> cptc_cartesian_damping_target;
+  double cptc_alpha{0.005};
   // Eigen::Matrix<double, 7, 1> q_d_nullspace_;
   Eigen::Vector3d cptc_position_desired;
   Eigen::Quaterniond cptc_orientation_desired; 

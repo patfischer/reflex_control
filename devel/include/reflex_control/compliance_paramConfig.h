@@ -251,7 +251,7 @@ class DEFAULT
         if("cptc_vel"==(*_i)->name){cptc_vel = boost::any_cast<double>(val);}
         if("cptc_vel_rotation"==(*_i)->name){cptc_vel_rotation = boost::any_cast<double>(val);}
         if("cptc_tol_trans"==(*_i)->name){cptc_tol_trans = boost::any_cast<double>(val);}
-        if("cptc_tol_rot"==(*_i)->name){cptc_tol_rot = boost::any_cast<double>(val);}
+        if("cptc_tol_angle"==(*_i)->name){cptc_tol_angle = boost::any_cast<double>(val);}
       }
     }
 
@@ -270,7 +270,7 @@ double cptc_nullspace_stiffness;
 double cptc_vel;
 double cptc_vel_rotation;
 double cptc_tol_trans;
-double cptc_tol_rot;
+double cptc_tol_angle;
 
     bool state;
     std::string name;
@@ -311,7 +311,7 @@ double cptc_tol_rot;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double cptc_tol_trans;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      double cptc_tol_rot;
+      double cptc_tol_angle;
 //#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
@@ -601,15 +601,15 @@ compliance_paramConfig::GroupDescription<compliance_paramConfig::DEFAULT, compli
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_trans", "double", 0, "Pose tolerance", "", &compliance_paramConfig::cptc_tol_trans)));
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __min__.cptc_tol_rot = 0.0;
+      __min__.cptc_tol_angle = 0.0;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __max__.cptc_tol_rot = 100.0;
+      __max__.cptc_tol_angle = 100.0;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __default__.cptc_tol_rot = 0.05;
+      __default__.cptc_tol_angle = 0.05;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_rot", "double", 0, "Angle tolerance", "", &compliance_paramConfig::cptc_tol_rot)));
+      Default.abstract_parameters.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_angle", "double", 0, "Angle tolerance", "", &compliance_paramConfig::cptc_tol_angle)));
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_rot", "double", 0, "Angle tolerance", "", &compliance_paramConfig::cptc_tol_rot)));
+      __param_descriptions__.push_back(compliance_paramConfig::AbstractParamDescriptionConstPtr(new compliance_paramConfig::ParamDescription<double>("cptc_tol_angle", "double", 0, "Angle tolerance", "", &compliance_paramConfig::cptc_tol_angle)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
